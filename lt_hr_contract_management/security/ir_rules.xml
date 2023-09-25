@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="contract_management_multiple_company" model="ir.rule">
+            <field name="name">Contract Management in multiple companies</field>
+            <field ref="model_contract_management" name="model_id"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <!-- You can attach this rule to a specific group, Or make it Global -->
+            <!--<field name="groups" eval="[(4, ref('group_id'))]"/>-->
+            <field name="global" eval="1"/>
+        </record>
+
+        <record id="contract_management_line_multiple_company" model="ir.rule">
+            <field name="name">Contract Management Line in multiple companies</field>
+            <field ref="model_contract_management_line" name="model_id"/>
+            <field name="domain_force">[('currently_company_id', '=', company_id)]</field>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <!-- You can attach this rule to a specific group, Or make it Global -->
+            <!--<field name="groups" eval="[(4, ref('group_id'))]"/>-->
+            <field name="global" eval="1"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="contract_management_log_form_view" model="ir.ui.view">
+        <field name="name">contract.management.log.form.view</field>
+        <field name="model">contract.management.log</field>
+        <field name="arch" type="xml">
+            <form string="Historic Changes">
+                <header>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="display_name"/>
+                        <h1>
+                            <field name="display_name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="management_id"/>
+                            <field name="contract_id"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <field name="reversed_date"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Changes Applied" name="changes">
+                            <field name="line_ids">
+                                <tree>
+                                    <field name="field_id"/>
+
+                                    <field name="value" invisible="1"/>
+                                    <field name="value_to_show"/>
+
+                                    <field name="old_value" invisible="1"/>
+                                    <field name="old_value_to_show"/>
+                                    <field name="date"/>
+                                    <field name="reverse_date"/>
+                                    <field name="state" groups="base.group_no_one"/>
+                                    <field name="model_to_affect" groups="base.group_no_one"/>
+                                    <field name="method" groups="base.group_no_one"/>
+                                    <field name="management_id" invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="contract_management_log_tree_view" model="ir.ui.view">
+        <field name="name">contract.management.log.tree.view</field>
+        <field name="model">contract.management.log</field>
+        <field name="arch" type="xml">
+            <tree string="Contract Management Log">
+                <field name="display_name"/>
+                <field name="management_id"/>
+                <field name="date"/>
+                <field name="reversed_date"/>
+                <field name="state"/>
+                <field name="contract_id" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="contract_management_log_act_window" model="ir.actions.act_window">
+        <field name="name">Contract Management Log</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">contract.management.log</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

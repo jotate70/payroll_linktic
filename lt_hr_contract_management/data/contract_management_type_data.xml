@@ -1,0 +1,40 @@
+<odoo>
+    <data noupdate="False">
+        <record id="contract_management_type_MCO" model="contract.management.type.setting">
+            <field name="name">Medida Cambio Organizativo</field>
+            <field name="code">MCO</field>
+        </record>
+        <record id="contract_management_type_MMS" model="contract.management.type.setting">
+            <field name="name">Medida Modificación Salario</field>
+            <field name="code">MMS</field>
+        </record>
+        <record id="contract_management_type_MPC" model="contract.management.type.setting">
+            <field name="name">Medida de Prṕrroga de contratos</field>
+            <field name="code">MPC</field>
+        </record>
+        <record id="contract_management_type_MST" model="contract.management.type.setting">
+            <field name="name">Medida Sustitución Patronal</field>
+            <field name="code">MSP</field>
+        </record>
+        <record id="contract_management_type_MPSI" model="contract.management.type.setting">
+            <field name="name">Medida de Paso a Salario Integral</field>
+            <field name="code">MPSI</field>
+        </record>
+        <record id="contract_management_type_MPSRL50" model="contract.management.type.setting">
+            <field name="name">Medida de Paso Reg, Anterior - Ley 50</field>
+            <field name="code">MPSRL50</field>
+        </record>
+        <record id="contract_management_type_MPALP" model="contract.management.type.setting">
+            <field name="name">Medida Paso Aprendiz Lectiva-Productiva</field>
+            <field name="code">MPALP</field>
+        </record>
+        <record id="contract_management_type_MCDP" model="contract.management.type.setting">
+            <field name="name">Medida de Cambios de Datos Personales</field>
+            <field name="code">MCDP</field>
+        </record>
+        <record id="contract_management_type_MR" model="contract.management.type.setting">
+            <field name="name">Medida de Retiro</field>
+            <field name="code">MR</field>
+        </record>
+    </data>
+</odoo>

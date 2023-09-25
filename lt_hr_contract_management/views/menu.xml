@@ -1,0 +1,52 @@
+<odoo>
+
+    <menuitem id="menu_hr_contract_root"
+              name="Contracts"
+              parent="hr.menu_hr_root"
+              groups="hr.group_hr_user"
+              sequence="10"/>
+
+    <menuitem name="Contract"
+              id="menu_hr_contract"
+              parent="menu_hr_contract_root"
+              sequence="10"
+              action="lt_hr_contract_management.action_hr_contract"/>
+
+    <menuitem name="Contract Novelty"
+              id="menu_hr_contract_management"
+              parent="menu_hr_contract_root"
+              sequence="20"
+              action="lt_hr_contract_management.contract_management_act_window"/>
+
+    <!--Menus-->
+    <menuitem id="contract_management_menu_category"
+              name="Contract Management"
+              parent="hr.menu_human_resources_configuration"
+              groups="base.group_no_one"
+              sequence="110"/>
+
+    <menuitem name="Contrat Management Line"
+              id="contract_management_line_menu"
+              parent="contract_management_menu_category"
+              sequence="5"
+              action="lt_hr_contract_management.contract_management_line_act_window"/>
+
+    <menuitem name="Type"
+              id="contract_management_type_setting_menu"
+              parent="contract_management_menu_category"
+              sequence="10"
+              action="lt_hr_contract_management.contract_management_type_setting_act_window"/>
+
+    <menuitem name="Reason"
+              id="contract_management_reason_setting_menu"
+              parent="contract_management_menu_category"
+              sequence="15"
+              action="lt_hr_contract_management.contract_management_reason_setting_act_window"/>
+
+    <menuitem name="Class"
+              id="contract_management_class_setting_menu"
+              parent="contract_management_menu_category"
+              sequence="20"
+              action="lt_hr_contract_management.contract_management_class_setting_act_window"/>
+
+</odoo>

@@ -1,0 +1,1311 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* lt_hr_contract_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-31 21:39+0000\n"
+"PO-Revision-Date: 2023-08-31 21:39+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: lt_hr_contract_management
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_form_view
+msgid ""
+"<br/>\n"
+"                    To be automatically processed, you must process the document to pass draft to pending to process state"
+msgstr ""
+"<br/>\n"
+"Para ser procesado automáticamente, debe procesar el documento para pasar borrador a estado pendiente de procesar"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management.py:0
+#, python-format
+msgid ""
+"<div class=\"o_mail_notification\">Future contract management: <a href=\"#\""
+" class=\"o_channel_redirect\" data-oe-id=\"%s\">#%s</a> has failed.<br/> "
+"Error: %s</div>"
+msgstr ""
+"<div class=\"o_mail_notification\">Gestión de contratos futuros: <a href=\"#\""
+" class=\"o_channel_redirect\" data-oe-id=\"%s\">#%s</a> ha fallado.<br/> "
+"Error: %s</div>"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management.py:0
+#, python-format
+msgid ""
+"<ul class='o_mail_thread_message_tracking'><li> Automatically "
+"processed:<span class='fa fa-long-arrow-right' role='img'/><span> %s "
+"</span></li></ul>"
+msgstr ""
+"<ul class='o_mail_thread_message_tracking'><li> Automáticamente "
+"procesado:<span class='fa fa-long-arrow-right' role='img'/>><span> %s "
+"</span></li></ul>"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__access_warning
+msgid "Access warning"
+msgstr "Advertencia de acceso"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__message_needaction
+msgid "Action Needed"
+msgstr "Acción necesaria"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de excepción de actividad"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__activity_state
+msgid "Activity State"
+msgstr "Estado de actividad"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icono de tipo de actividad"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields.selection,name:lt_hr_contract_management.selection__contract_management_log__state__actual
+#: model:ir.model.fields.selection,name:lt_hr_contract_management.selection__contract_management_log_line__state__actual
+msgid "Actual"
+msgstr "Real"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__actual_value
+msgid "Actual Value"
+msgstr "Valor real"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_reason_setting__allow_future_measurement
+msgid "Allow future measurement"
+msgstr "Permitir mediciones futuras"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log_line__args
+msgid "Args"
+msgstr "Argumentos"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__message_attachment_count
+msgid "Attachment Count"
+msgstr "Recuento de archivos adjuntos"
+
+#. module: lt_hr_contract_management
+#: model:mail.channel,name:lt_hr_contract_management.channel_retirement_management
+msgid "Auto contract changes failed"
+msgstr "Error en los cambios del contrato de automóvil"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields.selection,name:lt_hr_contract_management.selection__hr_contract__salary_type__basic
+msgid "Basic"
+msgstr "Básico"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__type_boolean
+#, python-format
+msgid "Boolean"
+msgstr "booleano"
+
+#. module: lt_hr_contract_management
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_line_search_view
+msgid "By Contract"
+msgstr "Por contrato"
+
+#. module: lt_hr_contract_management
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_line_search_view
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_search_view
+msgid "By type"
+msgstr "Por tipo"
+
+#. module: lt_hr_contract_management
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_form_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields.selection,name:lt_hr_contract_management.selection__contract_management__state__cancelled
+#: model:ir.model.fields.selection,name:lt_hr_contract_management.selection__contract_management_line__state__cancelled
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: lt_hr_contract_management
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_form_view
+msgid "Change Management Detail"
+msgstr "Detalle de gestión de cambios"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log_line__date
+msgid "Change applied"
+msgstr "Cambio aplicado"
+
+#. module: lt_hr_contract_management
+#: model:ir.model,name:lt_hr_contract_management.model_contract_management_class_setting
+msgid "Change management Class settings for contracts"
+msgstr "Gestión de cambios Configuración de clases para contratos"
+
+#. module: lt_hr_contract_management
+#: model:ir.model,name:lt_hr_contract_management.model_contract_management
+msgid "Change management for contracts"
+msgstr "Gestión de cambios para contratos"
+
+#. module: lt_hr_contract_management
+#: model:ir.model,name:lt_hr_contract_management.model_contract_management_reason_setting
+msgid "Change management reason settings for contracts"
+msgstr "Configuración de motivos de gestión de cambios para contratos"
+
+#. module: lt_hr_contract_management
+#: model:ir.model,name:lt_hr_contract_management.model_contract_management_type_setting
+msgid "Change management type settings for contracts"
+msgstr "Cambiar la configuración del tipo de gestión para contratos"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log__line_ids
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_log_form_view
+msgid "Changes Applied"
+msgstr "Cambios aplicados"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management.py:0
+#, python-format
+msgid "Changes Reversed"
+msgstr "Cambios revertidos"
+
+#. module: lt_hr_contract_management
+#: model:ir.actions.act_window,name:lt_hr_contract_management.contract_management_class_setting_act_window
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__class_id
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_reason_setting__class_ids
+#: model:ir.ui.menu,name:lt_hr_contract_management.contract_management_class_setting_menu
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_class_setting_form_view
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_class_setting_search_view
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_class_setting_tree_view
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_line_search_view
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_reason_setting_form_view
+msgid "Class"
+msgstr "Clase"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_class_setting__code
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_type_setting__code
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_class_setting_search_view
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_type_setting_search_view
+msgid "Code"
+msgstr "Código"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__actual_column_name
+msgid "Column to fill"
+msgstr "Columna a llenar"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__company_id
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__company_id
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_line_search_view
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_search_view
+msgid "Company"
+msgstr "Empresa"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__company_int
+msgid "Company Int"
+msgstr "Empresa Internacional"
+
+#. module: lt_hr_contract_management
+#: model:ir.actions.act_window,name:lt_hr_contract_management.action_hr_contract
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__contract_id
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__contract_id
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log__contract_id
+#: model:ir.ui.menu,name:lt_hr_contract_management.menu_hr_contract
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_line_search_view
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_search_view
+msgid "Contract"
+msgstr "Contrato"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management.py:0
+#, python-format
+msgid "Contract Change Management %s"
+msgstr "Gestión de cambios de contrato %s"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__contract_date_end
+msgid "Contract Date End"
+msgstr "Fecha de finalización del contrato"
+
+#. module: lt_hr_contract_management
+#: model:ir.actions.act_window,name:lt_hr_contract_management.contract_management_act_window
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log__management_id
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log_line__management_id
+#: model:ir.module.category,name:lt_hr_contract_management.contract_management
+#: model:ir.ui.menu,name:lt_hr_contract_management.contract_management_menu_category
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_form_view
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_line_tree_view
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_search_view
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_tree_view
+msgid "Contract Management"
+msgstr "Gestión de contratos"
+
+#. module: lt_hr_contract_management
+#: model:ir.actions.act_window,name:lt_hr_contract_management.contract_management_line_act_window
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_line_search_view
+msgid "Contract Management Line"
+msgstr "Línea de Gestión de Contratos"
+
+#. module: lt_hr_contract_management
+#: model:ir.actions.act_window,name:lt_hr_contract_management.contract_management_log_act_window
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_log_tree_view
+msgid "Contract Management Log"
+msgstr "Registro de gestión de contratos"
+
+#. module: lt_hr_contract_management
+#: model:ir.model,name:lt_hr_contract_management.model_contract_management_log
+msgid "Contract Management Reversed"
+msgstr "Gestión de contratos revertida"
+
+#. module: lt_hr_contract_management
+#: model:ir.ui.menu,name:lt_hr_contract_management.menu_hr_contract_management
+msgid "Contract Novelty"
+msgstr "Novedades de contrato"
+
+#. module: lt_hr_contract_management
+#: model:ir.model,name:lt_hr_contract_management.model_contract_management_log_line
+msgid "Contract management Log"
+msgstr "Registro de gestión de contratos"
+
+#. module: lt_hr_contract_management
+#: model:ir.ui.menu,name:lt_hr_contract_management.menu_hr_contract_root
+msgid "Contracts"
+msgstr "Contratos"
+
+#. module: lt_hr_contract_management
+#: model:ir.ui.menu,name:lt_hr_contract_management.contract_management_menu
+msgid "Contrat Management"
+msgstr "Gestión de contratos"
+
+#. module: lt_hr_contract_management
+#: model:ir.ui.menu,name:lt_hr_contract_management.contract_management_line_menu
+msgid "Contrat Management Line"
+msgstr "Línea de Gestión de Contratos"
+
+#. module: lt_hr_contract_management
+#. openerp-web
+#: code:addons/lt_hr_contract_management/static/src/js/hr_contract_reference.js:0
+#, python-format
+msgid "Create \"<strong>%s</strong>\""
+msgstr "Crear \"<strong>%s</strong>\""
+
+#. module: lt_hr_contract_management
+#. openerp-web
+#: code:addons/lt_hr_contract_management/static/src/js/hr_contract_reference.js:0
+#, python-format
+msgid "Create and Edit..."
+msgstr "Crear y editar..."
+
+#. module: lt_hr_contract_management
+#: model_terms:ir.actions.act_window,help:lt_hr_contract_management.action_hr_contract
+msgid "Create the first contract."
+msgstr "Crea el primer contrato."
+
+#. module: lt_hr_contract_management
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_form_view
+msgid "Created"
+msgstr "Creado"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__create_uid
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_class_setting__create_uid
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__create_uid
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log__create_uid
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log_line__create_uid
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_reason_setting__create_uid
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_type_setting__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__create_date
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_class_setting__create_date
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__create_date
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log__create_date
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log_line__create_date
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_reason_setting__create_date
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_type_setting__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__currently_company_id
+msgid "Currently Company"
+msgstr "Actualmente Empresa"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__currently_currency_id
+msgid "Currently Currency"
+msgstr "Moneda actual"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,help:lt_hr_contract_management.field_contract_management__access_url
+msgid "Customer Portal URL"
+msgstr "URL del portal del cliente"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__type_date
+#, python-format
+msgid "Date"
+msgstr "Fecha"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__type_datetime
+#, python-format
+msgid "Datetime"
+msgstr "fecha y hora"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management.py:0
+#, python-format
+msgid ""
+"Delete operation not allowed, for this documents\n"
+"\n"
+"\t%s\n"
+"\n"
+"You can delete only in draft state."
+msgstr ""
+"Operación de eliminación no permitida para estos documentos\n"
+"\norte"
+"\t%s\n"
+"\norte"
+"Puedes eliminar sólo en estado de borrador."
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#, python-format
+msgid ""
+"Delete operation not allowed. Only in draft state is allowed this operation"
+msgstr ""
+"La operación de eliminación no está permitida. Sólo en estado borrador se permite esta operación"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__display_name
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_class_setting__display_name
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__display_name
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log__display_name
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log_line__display_name
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_reason_setting__display_name
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_type_setting__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_reason_setting__distribute_entry
+msgid "Distribute Entry"
+msgstr "Distribuir entrada"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields.selection,name:lt_hr_contract_management.selection__contract_management__state__draft
+#: model:ir.model.fields.selection,name:lt_hr_contract_management.selection__contract_management_line__state__draft
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management.py:0
+#, python-format
+msgid "Draft Contract Change Management"
+msgstr "Gestión de cambios en el borrador del contrato"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__employee_id
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__employee_id
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_line_search_view
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_search_view
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: lt_hr_contract_management
+#: model:ir.model,name:lt_hr_contract_management.model_hr_contract
+msgid "Employee Contract"
+msgstr "Contrato de empleado"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_log.py:0
+#, python-format
+msgid "Empty"
+msgstr "vacío"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__date_end
+msgid "End Date"
+msgstr "Fecha de finalización"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,help:lt_hr_contract_management.field_contract_management__contract_date_end
+msgid "End date of the contract (if it's a fixed-term contract)."
+msgstr "Fecha de finalización del contrato (si es un contrato de duración determinada)."
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#: code:addons/lt_hr_contract_management/models/contract_management_log.py:0
+#, python-format
+msgid "False"
+msgstr "Falso"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_class_setting__field_id
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__field_id
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log_line__field_id
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_form_view
+msgid "Field"
+msgstr "Campo"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Socios)"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,help:lt_hr_contract_management.field_contract_management__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icono de fuente impresionante, p. "
+
+#. module: lt_hr_contract_management
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_line_search_view
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_search_view
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__has_message
+msgid "Has Message"
+msgstr "Tiene mensaje"
+
+#. module: lt_hr_contract_management
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_log_form_view
+msgid "Historic Changes"
+msgstr "Cambios históricos"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__id
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_class_setting__id
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__id
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log__id
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log_line__id
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_reason_setting__id
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_type_setting__id
+msgid "ID"
+msgstr "identificación"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__activity_exception_icon
+msgid "Icon"
+msgstr "icono"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,help:lt_hr_contract_management.field_contract_management__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de excepción."
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log_line__id_to_affect
+msgid "Id To Affect"
+msgstr "Identificación para afectar"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__identification
+msgid "Identification Number"
+msgstr "Número de identificación"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,help:lt_hr_contract_management.field_contract_management__message_needaction
+#: model:ir.model.fields,help:lt_hr_contract_management.field_contract_management__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, los mensajes nuevos requieren su atención."
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,help:lt_hr_contract_management.field_contract_management__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#, python-format
+msgid "In the column Value %s must be a number"
+msgstr "En la columna Valor %s debe ser un número"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields.selection,name:lt_hr_contract_management.selection__hr_contract__salary_type__integral
+msgid "Integral"
+msgstr "Integrales"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__is_boolean
+msgid "Is Boolean"
+msgstr "es booleano"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__is_char
+msgid "Is Char"
+msgstr "Es carbón"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__is_date
+msgid "Is Date"
+msgstr "Es la fecha"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__is_datetime
+msgid "Is Datetime"
+msgstr "Es fecha y hora"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__is_monetary
+msgid "Is Monetary"
+msgstr "Es monetario"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__is_relation
+msgid "Is Relation"
+msgstr "Es relación"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__is_scheduled
+msgid "Is Scheduled"
+msgstr "Está programado"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__is_selection
+msgid "Is Selection"
+msgstr "Es la selección"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management.py:0
+#, python-format
+msgid ""
+"It is not possible to execute a change of contract by the analytical "
+"account, I select as change the same analytical account for the contract %s"
+msgstr ""
+"No es posible ejecutar un cambio de contrato por la analítica"
+"cuenta, selecciono como cambio la misma cuenta analítica para el contrato %s"
+
+#. module: lt_hr_contract_management
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_form_view
+msgid "It will be process automatically in the given date."
+msgstr "Se procesará automáticamente en la fecha indicada."
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log_line__kwargs
+msgid "Kwargs"
+msgstr ""
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management____last_update
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_class_setting____last_update
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line____last_update
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log____last_update
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log_line____last_update
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_reason_setting____last_update
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_type_setting____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__reversed_date
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__reversed_date
+msgid "Last Reverse date"
+msgstr "Última fecha inversa"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__write_uid
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_class_setting__write_uid
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__write_uid
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log__write_uid
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log_line__write_uid
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_reason_setting__write_uid
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_type_setting__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__write_date
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_class_setting__write_date
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__write_date
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log__write_date
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log_line__write_date
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_reason_setting__write_date
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_type_setting__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__line_ids
+msgid "Line Change"
+msgstr "Cambio de línea"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log_line__log_id
+msgid "Log"
+msgstr "Iniciar sesión"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__log_count
+msgid "Log Count"
+msgstr "Recuento de registros"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_log.py:0
+#, python-format
+msgid "Log: %s - %s"
+msgstr "Registro: %s - %s"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management.py:0
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__log_ids
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_form_view
+#, python-format
+msgid "Logs"
+msgstr "Registros"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjunto principal"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__management_id
+msgid "Management"
+msgstr "Gestión"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log__date
+msgid "Measure applied"
+msgstr "Medida aplicada"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__message_has_error
+msgid "Message Delivery error"
+msgstr "error de entrega de mensaje"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__model_relation
+msgid "Model Relation"
+msgstr "Relación del modelo"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log_line__model_to_affect
+msgid "Model to affect"
+msgstr "Modelo a afectar"
+
+#. module: lt_hr_contract_management
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_form_view
+msgid "Modified"
+msgstr "Modificado"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management.py:0
+#, python-format
+msgid ""
+"Multiple sequence found for contract.management in this company %s. Contact "
+"with the administrator"
+msgstr ""
+"Se encontraron múltiples secuencias para contract.management en esta empresa %s. Contacto "
+"con el administrador"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Fecha límite de mi actividad"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__name
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_class_setting__name
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_reason_setting__name
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_type_setting__name
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_class_setting_form_view
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_class_setting_search_view
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_form_view
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_reason_setting_form_view
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_search_view
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_type_setting_form_view
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_type_setting_search_view
+msgid "Name"
+msgstr "Nombre"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#: code:addons/lt_hr_contract_management/models/contract_management_log.py:0
+#, python-format
+msgid "Name not found"
+msgstr "Nombre no encontrado"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Próximo evento del calendario de actividades"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Próxima fecha límite para la actividad"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__activity_summary
+msgid "Next Activity Summary"
+msgstr "Próximo resumen de actividad"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_log.py:0
+#, python-format
+msgid "No Contract"
+msgstr "Sin contrato"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management.py:0
+#, python-format
+msgid "No contract"
+msgstr "Sin contrato"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#, python-format
+msgid "No contract defined"
+msgstr "No hay contrato definido"
+
+#. module: lt_hr_contract_management
+#. openerp-web
+#: code:addons/lt_hr_contract_management/static/src/js/hr_contract_reference.js:0
+#, python-format
+msgid "No results to show..."
+msgstr "No hay resultados para mostrar..."
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_log.py:0
+#: code:addons/lt_hr_contract_management/models/contract_management_log.py:0
+#, python-format
+msgid "No value yet"
+msgstr "Sin valor aún"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#, python-format
+msgid "Not found"
+msgstr "No encontrado"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management.py:0
+#, python-format
+msgid "Not is possible process the changes without changes"
+msgstr "No es posible procesar los cambios sin cambios"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management.py:0
+#, python-format
+msgid "Not possible archive Contract Change Management in processed state"
+msgstr "No es posible archivar la Gestión de cambios de contrato en estado procesado"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,help:lt_hr_contract_management.field_contract_management__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,help:lt_hr_contract_management.field_contract_management__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de entrega"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,help:lt_hr_contract_management.field_contract_management__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leídos"
+
+#. module: lt_hr_contract_management
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_form_view
+msgid "On hold"
+msgstr "En espera"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management.py:0
+#: code:addons/lt_hr_contract_management/models/contract_management.py:0
+#: code:addons/lt_hr_contract_management/models/contract_management.py:0
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#, python-format
+msgid ""
+"Please, contact to administrator\n"
+"\n"
+".Expected singleton: %s"
+msgstr ""
+"Por favor, contacte con el administrador\n"
+"\norte"
+".Singleton esperado: %s"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__access_url
+msgid "Portal Access URL"
+msgstr "URL de acceso al portal"
+
+#. module: lt_hr_contract_management
+#: model:ir.actions.server,name:lt_hr_contract_management.action_process_contract_management
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_form_view
+msgid "Process"
+msgstr "Proceso"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields.selection,name:lt_hr_contract_management.selection__contract_management__state__processed
+#: model:ir.model.fields.selection,name:lt_hr_contract_management.selection__contract_management_line__state__processed
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_form_view
+msgid "Processed"
+msgstr "Procesado"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__type_char
+#, python-format
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: lt_hr_contract_management
+#. openerp-web
+#: code:addons/lt_hr_contract_management/static/src/js/hr_contract_reference.js:0
+#, python-format
+msgid "Quick search: %s"
+msgstr "Búsqueda rápida: %s"
+
+#. module: lt_hr_contract_management
+#: model:ir.actions.act_window,name:lt_hr_contract_management.contract_management_reason_setting_act_window
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__type_id
+#: model:ir.ui.menu,name:lt_hr_contract_management.contract_management_reason_setting_menu
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_reason_setting_search_view
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_reason_setting_tree_view
+msgid "Reason"
+msgstr "Razón"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_class_setting__relation_field_id
+msgid "Related field"
+msgstr "campo relacionado"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__type_relation_id
+#, python-format
+msgid "Relation"
+msgstr "Relación"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_reason_setting__remove_date_end_contract
+msgid "Remove Date End for Contract"
+msgstr "Eliminar fecha de finalización del contrato"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario Responsable"
+
+#. module: lt_hr_contract_management
+#: model:ir.actions.server,name:lt_hr_contract_management.action_reverse_contract_management
+msgid "Reverse"
+msgstr "Reversa"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__reverse_count
+msgid "Reverse Count"
+msgstr "Cuenta inversa"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management.py:0
+#, python-format
+msgid ""
+"Reverse operation not allowed, for this documents\n"
+"\n"
+"\t%s\n"
+"\n"
+"You can reverse only in processed state."
+msgstr ""
+"No se permite la operación inversa para estos documentos\n"
+"\norte"
+"\t%s\n"
+"\norte"
+"Se puede revertir sólo en estado procesado."
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields.selection,name:lt_hr_contract_management.selection__contract_management__state__reversed
+#: model:ir.model.fields.selection,name:lt_hr_contract_management.selection__contract_management_line__state__reversed
+#: model:ir.model.fields.selection,name:lt_hr_contract_management.selection__contract_management_log__state__reversed
+#: model:ir.model.fields.selection,name:lt_hr_contract_management.selection__contract_management_log_line__state__reversed
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_form_view
+msgid "Reversed"
+msgstr "invertido"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log_line__reverse_date
+msgid "Reversed Date"
+msgstr "Fecha invertida"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log__reversed_date
+msgid "Reversed Management "
+msgstr "Gestión invertida"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_hr_contract__salary_type
+msgid "Salary Type"
+msgstr "Tipo de salario"
+
+#. module: lt_hr_contract_management
+#. openerp-web
+#: code:addons/lt_hr_contract_management/static/src/js/hr_contract_reference.js:0
+#, python-format
+msgid "Search More..."
+msgstr "Buscar Más..."
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__access_token
+msgid "Security Token"
+msgstr "Ficha de seguridad"
+
+#. module: lt_hr_contract_management
+#: model:res.groups,name:lt_hr_contract_management.group_logs
+msgid "See logs on contract management"
+msgstr "Ver registros sobre gestión de contratos"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__type_selection_id
+#, python-format
+msgid "Selection"
+msgstr "Selección"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#, python-format
+msgid "Selection value not found"
+msgstr "Valor de selección no encontrado"
+
+#. module: lt_hr_contract_management
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_form_view
+msgid "Set to draft"
+msgstr "Establecer en borrador"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__date_init
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__date_start
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__state
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__state
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_line_search_view
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_search_view
+msgid "State"
+msgstr "Estado"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__contract_state
+msgid "Status"
+msgstr "Estado"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,help:lt_hr_contract_management.field_contract_management__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Atrasado: la fecha de vencimiento ya pasó\n"
+"Hoy: la fecha de la actividad es hoy\n"
+"Planificado: actividades futuras."
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,help:lt_hr_contract_management.field_contract_management__contract_state
+msgid "Status of the contract"
+msgstr "Estado del contrato"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields.selection,name:lt_hr_contract_management.selection__hr_contract__salary_type__support_sustainability
+msgid "Support Sustainability"
+msgstr "Apoyar la Sostenibilidad"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#, python-format
+msgid "The column Boolean cannot be empty for this class %s"
+msgstr "La columna booleana no puede estar vacía para esta clase %s"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#, python-format
+msgid "The column Date cannot be empty for this class %s"
+msgstr "La columna Fecha no puede estar vacía para esta clase %s"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#, python-format
+msgid "The column Datetime cannot be empty for this class %s"
+msgstr "La columna Fecha y hora no puede estar vacía para esta clase %s"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#, python-format
+msgid "The column Monetary cannot be empty for this class %s"
+msgstr "La columna Monetaria no puede estar vacía para esta clase %s"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#, python-format
+msgid "The column Selection cannot be empty for this class %s"
+msgstr "La columna Selección no puede estar vacía para esta clase %s"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#, python-format
+msgid "The column relation cannot be empty for this class %s"
+msgstr "La relación de columna no puede estar vacía para esta clase %s"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management.py:0
+#, python-format
+msgid "The contract must be defined to calculate the class changes"
+msgstr "Se debe definir el contrato para calcular los cambios de clase."
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#, python-format
+msgid "The field on the class %s cannot be empty"
+msgstr "El campo de la clase %s no puede estar vacío"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#, python-format
+msgid "The field type %s does not exist in Odoo"
+msgstr "El tipo de campo %s no existe en Odoo"
+
+#. module: lt_hr_contract_management
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_form_view
+msgid "The management date of the change is future."
+msgstr "La fecha de gestión del cambio es futura."
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management.py:0
+#, python-format
+msgid "The measurement chosen not has reason or class defined"
+msgstr "La medida elegida no tiene motivo ni clase definida"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management.py:0
+#, python-format
+msgid "The reason only can be changed in draft state"
+msgstr "El motivo solo se puede cambiar en estado borrador."
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#, python-format
+msgid ""
+"The relation chosen has multiple companies. The company on contract "
+"management must be within the group of companies in the relation"
+msgstr ""
+"La relación elegida tiene múltiples empresas. La empresa por contrato"
+"la gestión debe estar dentro del grupo de empresas en la relación"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#, python-format
+msgid ""
+"The relation of field %s not belong to %s.The company relation cannot be "
+"different."
+msgstr ""
+"La relación del campo %s no pertenece a %s. La relación de empresa no puede ser "
+"diferente."
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#, python-format
+msgid "The start date of class %s cannot be empty"
+msgstr "La fecha de inicio de la clase %s no puede estar vacía"
+
+#. module: lt_hr_contract_management
+#: model_terms:ir.actions.act_window,help:lt_hr_contract_management.contract_management_line_act_window
+msgid "There is no Contract management line."
+msgstr "No existe línea de gestión de contratos."
+
+#. module: lt_hr_contract_management
+#: model_terms:ir.actions.act_window,help:lt_hr_contract_management.contract_management_act_window
+msgid "There is no Contract management."
+msgstr "No hay gestión de contratos."
+
+#. module: lt_hr_contract_management
+#: model_terms:ir.actions.act_window,help:lt_hr_contract_management.contract_management_type_setting_act_window
+msgid "There is no Types. Click in create button to add new one."
+msgstr "No hay tipos. "
+
+#. module: lt_hr_contract_management
+#: model_terms:ir.actions.act_window,help:lt_hr_contract_management.contract_management_class_setting_act_window
+msgid "There is no examples click in create button to add new one."
+msgstr "No hay ejemplos, haga clic en el botón Crear para agregar uno nuevo."
+
+#. module: lt_hr_contract_management
+#: model_terms:ir.actions.act_window,help:lt_hr_contract_management.contract_management_reason_setting_act_window
+msgid "There is no reason. Click in create button to add new one."
+msgstr "No hay motivo. "
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields.selection,name:lt_hr_contract_management.selection__contract_management__state__to_process
+#: model:ir.model.fields.selection,name:lt_hr_contract_management.selection__contract_management_line__state__to_process
+msgid "To Process"
+msgstr "Para procesar"
+
+#. module: lt_hr_contract_management
+#: code:addons/lt_hr_contract_management/models/contract_management_line.py:0
+#: code:addons/lt_hr_contract_management/models/contract_management_log.py:0
+#, python-format
+msgid "True"
+msgstr "Verdadero"
+
+#. module: lt_hr_contract_management
+#: model:ir.actions.act_window,name:lt_hr_contract_management.contract_management_type_setting_act_window
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__ttype_id
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__ttype
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_reason_setting__type_id
+#: model:ir.ui.menu,name:lt_hr_contract_management.contract_management_type_setting_menu
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_type_setting_form_view
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_type_setting_search_view
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_type_setting_tree_view
+msgid "Type"
+msgstr "Tipo"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,help:lt_hr_contract_management.field_contract_management__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de actividad de excepción registrada."
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes no leídos"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes no leídos"
+
+#. module: lt_hr_contract_management
+#: model:res.groups,name:lt_hr_contract_management.group_contract_management_user
+msgid "User"
+msgstr "Usuario"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_line__type_monetary
+msgid "Value"
+msgstr "Valor"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,help:lt_hr_contract_management.field_contract_management_log_line__old_value_to_show
+msgid "Value after to process measure. Value before to reversion process"
+msgstr "Valor después de procesar la medida. "
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log_line__value
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log_line__value_to_show
+msgid "Value applied"
+msgstr "Valor aplicado"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log_line__old_value
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log_line__old_value_to_show
+msgid "Value before reversion"
+msgstr "Valor antes de la reversión"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,help:lt_hr_contract_management.field_contract_management_log_line__value_to_show
+msgid "Value before to process measure. Value to change in case of reversion"
+msgstr "Valor antes de procesar la medida. "
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,help:lt_hr_contract_management.field_contract_management__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicación del sitio web"
+
+#. module: lt_hr_contract_management
+#: model:ir.actions.server,name:lt_hr_contract_management.contract_management_future_cron_ir_actions_server
+#: model:ir.cron,cron_name:lt_hr_contract_management.contract_management_future_cron
+#: model:ir.cron,name:lt_hr_contract_management.contract_management_future_cron
+msgid "Withdrawal reason process when contract change date is future"
+msgstr "Proceso de motivo de retiro cuando la fecha de cambio del contrato es futura"
+
+#. module: lt_hr_contract_management
+#: model:ir.model,name:lt_hr_contract_management.model_contract_management_line
+msgid "change management line for contracts"
+msgstr "Línea de gestión de cambios para contratos"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log_line__method
+msgid "method"
+msgstr "Método"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log__name
+msgid "name"
+msgstr "Nombre"
+
+#. module: lt_hr_contract_management
+#: model_terms:ir.ui.view,arch_db:lt_hr_contract_management.contract_management_form_view
+msgid "process manually"
+msgstr "Procesar Manualmente"
+
+#. module: lt_hr_contract_management
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log__state
+#: model:ir.model.fields,field_description:lt_hr_contract_management.field_contract_management_log_line__state
+msgid "state"
+msgstr "Estado"

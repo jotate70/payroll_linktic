@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="hr_contract_reference_field" name="Customizable domain for reference field"
+              inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/lt_hr_contract_management/static/src/js/hr_contract_reference.js"/>
+        </xpath>
+    </template>
+</odoo>

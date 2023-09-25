@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Novedades -->
+        <record id="novelty_category_novedades" model="hr.novelty.category">
+            <field name="name">Novedades</field>
+            <field name="apply_factor">False</field>
+        </record>
+
+        <!-- Horas Extras -->
+        <record id="novelty_category_horas_extras" model="hr.novelty.category">
+            <field name="name">Horas Extras</field>
+            <field name="apply_factor">True</field>
+        </record>
+
+        <!-- Licencias -->
+        <record id="novelty_category_licencias" model="hr.novelty.category">
+            <field name="name">Licencias</field>
+            <field name="apply_factor">False</field>
+        </record>
+
+        <!-- Vacaciones -->
+        <record id="novelty_category_vacaciones" model="hr.novelty.category">
+            <field name="name">Vacaciones</field>
+            <field name="apply_factor">False</field>
+        </record>
+
+        <!-- Otros -->
+        <record id="novelty_category_otros" model="hr.novelty.category">
+            <field name="name">Otros</field>
+            <field name="apply_factor">False</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--contract.management.class.setting-->
+
+    <record id="contract_management_class_setting_form_view" model="ir.ui.view">
+        <field name="name">contract.management.class.setting.form</field>
+        <field name="model">contract.management.class.setting</field>
+        <field name="arch" type="xml">
+            <form string="Class">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                        </group>
+                        <group>
+                            <field name="field_id"
+                                   options="{'no_open': True, 'no_create_edit': True, 'no_quick_create': True}"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="contract_management_class_setting_tree_view" model="ir.ui.view">
+        <field name="name">contract.management.class.setting.tree</field>
+        <field name="model">contract.management.class.setting</field>
+        <field name="arch" type="xml">
+            <tree string="Class">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="field_id" options="{'no_open': True}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="contract_management_class_setting_search_view" model="ir.ui.view">
+        <field name="name">contract.management.class.setting.search</field>
+        <field name="model">contract.management.class.setting</field>
+        <field name="arch" type="xml">
+            <search string="Class">
+                <field name="name" string="Name"/>
+                <field name="code" string="Code"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="contract_management_class_setting_act_window" model="ir.actions.act_window">
+        <field name="name">Class</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">contract.management.class.setting</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click in create button to add new one.
+            </p>
+        </field>
+    </record>
+
+
+    <!--contract.management.reason.setting-->
+    <record id="contract_management_reason_setting_form_view" model="ir.ui.view">
+        <field name="name">contract.management.reason.setting.form</field>
+        <field name="model">contract.management.reason.setting</field>
+        <field name="arch" type="xml">
+            <form string="Class">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="type_id"/>
+                        </group>
+                        <group>
+                            <field name="class_ids" widget="many2many_tags"/>
+                            <field name="distribute_entry"/>
+                            <field name="allow_future_measurement"/>
+                            <field name="remove_date_end_contract"/>
+                        </group>
+                    </group>
+                    <notebook name="details" invisible="1"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="contract_management_reason_setting_tree_view" model="ir.ui.view">
+        <field name="name">contract.management.reason.setting.tree</field>
+        <field name="model">contract.management.reason.setting</field>
+        <field name="arch" type="xml">
+            <tree string="Reason">
+                <field name="name"/>
+                <field name="type_id"/>
+                <field name="class_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="contract_management_reason_setting_search_view" model="ir.ui.view">
+        <field name="name">contract.management.reason.setting.search</field>
+        <field name="model">contract.management.reason.setting</field>
+        <field name="arch" type="xml">
+            <search string="Reason">
+                <field name="name"/>
+                <field name="type_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="contract_management_reason_setting_act_window" model="ir.actions.act_window">
+        <field name="name">Reason</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">contract.management.reason.setting</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no reason. Click in create button to add new one.
+            </p>
+        </field>
+    </record>
+
+
+    <!--contract.management.type.setting-->
+    <record id="contract_management_type_setting_form_view" model="ir.ui.view">
+        <field name="name">contract.management.type.setting.form</field>
+        <field name="model">contract.management.type.setting</field>
+        <field name="arch" type="xml">
+            <form string="Type">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="contract_management_type_setting_tree_view" model="ir.ui.view">
+        <field name="name">contract.management.type.setting.tree</field>
+        <field name="model">contract.management.type.setting</field>
+        <field name="arch" type="xml">
+            <tree string="Type">
+                <field name="code"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="contract_management_type_setting_search_view" model="ir.ui.view">
+        <field name="name">contract.management.type.setting.search</field>
+        <field name="model">contract.management.type.setting</field>
+        <field name="arch" type="xml">
+            <search string="Type">
+                <field name="name" string="Name"/>
+                <field name="code" string="Code"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="contract_management_type_setting_act_window" model="ir.actions.act_window">
+        <field name="name">Type</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">contract.management.type.setting</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no Types. Click in create button to add new one.
+            </p>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="ListView.buttons" t-name="PayrollPeriod.Buttons">
+        <t t-jquery="button.o_list_button_add" t-operation="after">
+<!--            <t>-->
+            <t t-if="widget.modelName == 'hr.payroll.period'">
+                <button type="button" class="btn btn-primary oe_action_button" title="Generate Periods" accesskey="c">
+                    Generate Periods
+                </button>
+            </t>
+        </t>
+    </t>
+</templates>

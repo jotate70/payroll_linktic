@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Tipos de Horas Extras -->
+        <record id="novelty_type_horas_extra_diurna" model="hr.novelty.type">
+            <field name="name">Hora Extra Diurna</field>
+            <field name="code">HED</field>
+            <field name="category_id" ref="lt_hr_novelty.novelty_category_horas_extras"/>
+            <field name="type">income</field>
+            <field name="factor">25</field>
+            <field name="apply_date_end">False</field>
+        </record>
+
+    </data>
+</odoo>

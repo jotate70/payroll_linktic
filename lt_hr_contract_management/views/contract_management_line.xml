@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="contract_management_line_tree_view" model="ir.ui.view">
+        <field name="name">contract.management.line.tree.view</field>
+        <field name="model">contract.management.line</field>
+        <field name="arch" type="xml">
+            <tree string="Contract Management" decoration-muted="state in ('cancelled',)"
+                   decoration-danger="state == 'reversed'" decoration-info="state == 'draft'"
+                  editable="top" create="false" edit="false" delete="false">
+                <field name="employee_id"/>
+                <field name="contract_id" optional="hide"/>
+                <field name="management_id" optional="hide"/>
+                <field name="class_id"/>
+                <field name="actual_value"/>
+                <field name="type_char" optional="show"/>
+                <field name="type_relation_id" optional="show"/>
+                <field name="type_boolean" optional="show"/>
+                <field name="type_date" optional="show"/>
+                <field name="type_datetime" optional="show"/>
+                <field name="type_monetary" optional="hide"/>
+                <field name="type_selection_id" optional="show"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="state" optional="show"/>
+                <field name="currently_company_id" optional="hide"/>
+                <field name="currently_currency_id" invisible="1"/>
+                <field name="company_id" invisible="1"/>
+                <field name="field_id" invisible="1"/>
+                <field name="ttype" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="contract_management_line_search_view" model="ir.ui.view">
+        <field name="name">contract.management.line.search.view</field>
+        <field name="model">contract.management.line</field>
+        <field name="arch" type="xml">
+            <search string="Contract Management Line">
+                <field name="employee_id" string="Employee"/>
+                <field name="contract_id" string="Contract"/>
+                <field name="state" string="State"/>
+                <group expand="1" string="Group By">
+                    <filter string="By type" name="ttype" domain="[]"  context="{'group_by':'ttype'}"/>
+                    <filter string="By Contract" name="contract_id" domain="[]" context="{'group_by':'contract_id'}"/>
+                    <filter string="Employee" name="employee_id" domain="[]" context="{'group_by':'employee_id'}"/>
+                    <filter string="Class" name="class_id" domain="[]" context="{'group_by':'class_id'}"/>
+                    <filter string="Company" name="group_company" domain="[]" context="{'group_by':'company_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="contract_management_line_act_window" model="ir.actions.act_window">
+        <field name="name">Contract Management Line</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">contract.management.line</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no Contract management line.
+            </p>
+        </field>
+    </record>
+
+</odoo>

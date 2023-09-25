@@ -1,0 +1,53 @@
+<odoo>
+    <data noupdate="0">
+        <record id="contract_management_reason_AS" model="contract.management.reason.setting">
+            <field name="name">Ascenso</field>
+            <field name="class_ids"
+                   eval="[(6, 0, [
+                   ref('contract_management_class_analytic_account_id'),
+                   ref('contract_management_class_job_id'),
+                   ref('contract_management_class_wage')])]"/>
+            <field name="type_id" ref="contract_management_type_MCO"/>
+        </record>
+        <record id="contract_management_reason_NVL" model="contract.management.reason.setting">
+            <field name="name">Nivelación</field>
+            <field name="class_ids" eval="[(6, 0, [ref('contract_management_class_wage')])]"/>
+            <field name="type_id" ref="contract_management_type_MMS"/>
+        </record>
+        <record id="contract_management_reason_ACSL" model="contract.management.reason.setting">
+            <field name="name">Acuerdo de Salario</field>
+            <field name="class_ids" eval="[(6, 0, [ref('contract_management_class_wage')])]"/>
+            <field name="type_id" ref="contract_management_type_MMS"/>
+        </record>
+        <record id="contract_management_reason_PC" model="contract.management.reason.setting">
+            <field name="name">Prórroga de Contrato</field>
+            <field name="class_ids" eval="[(6, 0, [
+                   ref('contract_management_class_date_end'),])]"/>
+            <field name="type_id" ref="contract_management_type_MPC"/>
+        </record>
+        <record id="contract_management_reason_PSI" model="contract.management.reason.setting">
+            <field name="name">Paso a Salario Integral</field>
+            <field name="class_ids"
+                   eval="[(6, 0, [
+                       ref('contract_management_class_wage'),
+                       ref('contract_management_class_salary_type'),
+                   ])]"/>
+            <field name="type_id" ref="contract_management_type_MPSI"/>
+        </record>
+        <record id="contract_management_reason_PALP" model="contract.management.reason.setting">
+            <field name="name">Paso Aprendiz Lectiva-Productiva</field>
+            <field name="class_ids"
+                   eval="[(6, 0, [
+                       ref('contract_management_class_wage'),
+                       ref('contract_management_class_date_start'),
+                       ref('contract_management_class_date_end'),
+                   ])]"/>
+            <field name="type_id" ref="contract_management_type_MPALP"/>
+        </record>
+        <record id="contract_management_reason_R" model="contract.management.reason.setting">
+            <field name="name">Retiro</field>
+            <field name="class_ids" eval="[(6, 0, [ref('contract_management_class_date_end')])]"/>
+            <field name="type_id" ref="contract_management_type_MR"/>
+        </record>
+    </data>
+</odoo>

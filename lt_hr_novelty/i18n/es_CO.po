@@ -1,0 +1,564 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* lt_hr_novelty
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-29 19:41+0000\n"
+"PO-Revision-Date: 2023-08-29 19:41+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__message_needaction
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__message_needaction
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__message_needaction
+msgid "Action Needed"
+msgstr "Acción Requerida"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__activity_ids
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__activity_ids
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__activity_exception_decoration
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__activity_exception_decoration
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de Excepción de Actividad"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__activity_state
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__activity_state
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__activity_state
+msgid "Activity State"
+msgstr "Estado de la Actividad"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__activity_type_icon
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__activity_type_icon
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Ícono del Tipo de Actividad"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__apply_date_end
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__apply_date_end
+msgid "Apply Date End"
+msgstr "Fecha de Finalización de Aplicación"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__apply_factor
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__apply_factor
+msgid "Apply Factor"
+msgstr "Factor de Aplicación"
+
+#. module: lt_hr_novelty
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_form
+msgid "Approval"
+msgstr "Aprobar"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields.selection,name:lt_hr_novelty.selection__hr_novelty__state__approval
+msgid "Approved"
+msgstr "Aprobado"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__message_attachment_count
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__message_attachment_count
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__message_attachment_count
+msgid "Attachment Count"
+msgstr "Conteo de Adjuntos"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__category_id
+#: model:ir.ui.menu,name:lt_hr_novelty.menu_hr_novelty_category
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_type_search
+msgid "Category"
+msgstr "Categoría"
+
+#. module: lt_hr_novelty
+#: model:ir.model,name:lt_hr_novelty.model_hr_novelty_category
+msgid "Payroll News Category"
+msgstr "Categoría de Novedad de Nómina"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__code
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__code
+msgid "Code"
+msgstr "Código"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__company_id
+msgid "Company"
+msgstr "Empresa"
+
+#. module: lt_hr_novelty
+#: model:ir.ui.menu,name:lt_hr_novelty.menu_hr_novelty_configuration
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__contract_id
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_search
+msgid "Contract"
+msgstr "Contrato"
+
+#. module: lt_hr_novelty
+#: model_terms:ir.actions.act_window,help:lt_hr_novelty.action_hr_novelty_category
+msgid "Create the first category of novelty of payslip."
+msgstr "Crea la primera categoría de novedad de nómina."
+
+#. module: lt_hr_novelty
+#: model_terms:ir.actions.act_window,help:lt_hr_novelty.action_hr_novelty
+msgid "Create the first novelty of payslip."
+msgstr "Crea la primera novedad de nómina."
+
+#. module: lt_hr_novelty
+#: model_terms:ir.actions.act_window,help:lt_hr_novelty.action_hr_novelty_type
+msgid "Create the first type of novelty of payslip."
+msgstr "Crea el primer tipo de novedad de nómina."
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__create_uid
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__create_uid
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__create_date
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__create_date
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__date_end
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_search
+msgid "Date End"
+msgstr "Fecha de Fin"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__date_start
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_search
+msgid "Date Start"
+msgstr "Fecha de Inicio"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields.selection,name:lt_hr_novelty.selection__hr_novelty_type__type__deduction
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_form
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_search
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_type_form
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_type_search
+msgid "Deduction"
+msgstr "Deducción"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__display_name
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__display_name
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__display_name
+msgid "Display Name"
+msgstr "Nombre para Mostrar"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields.selection,name:lt_hr_novelty.selection__hr_novelty__state__draft
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_search
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__employee_id
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_search
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__state
+msgid "State"
+msgstr "Estado"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__factor
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__factor
+msgid "Factor"
+msgstr "Factor"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__message_follower_ids
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__message_follower_ids
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__message_partner_ids
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__message_partner_ids
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Socios)"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty__activity_type_icon
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_category__activity_type_icon
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_type__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Ícono de Font Awesome, por ejemplo: fa-tasks"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__formula
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__formula
+msgid "Formula"
+msgstr "Fórmula"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__has_message
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__has_message
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__has_message
+msgid "Has Message"
+msgstr "Tiene Mensaje"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__id
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__id
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__id
+msgid "ID"
+msgstr ""
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__activity_exception_icon
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__activity_exception_icon
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__activity_exception_icon
+msgid "Icon"
+msgstr "Ícono"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty__activity_exception_icon
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_category__activity_exception_icon
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_type__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Ícono para indicar una actividad excepcional."
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty__message_needaction
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty__message_unread
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_category__message_needaction
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_category__message_unread
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_type__message_needaction
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_type__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, los nuevos mensajes requieren tu atención."
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty__message_has_error
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_category__message_has_error
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_type__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields.selection,name:lt_hr_novelty.selection__hr_novelty_type__type__income
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_form
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_search
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_type_form
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_type_search
+msgid "Income"
+msgstr "Ingreso"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__message_is_follower
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__message_is_follower
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__message_is_follower
+msgid "Is Follower"
+msgstr "Es Seguidor"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty____last_update
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category____last_update
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type____last_update
+msgid "Last Modified on"
+msgstr "Última Modificación el"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__write_uid
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__write_uid
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__write_uid
+msgid "Last Updated by"
+msgstr "Última Actualización por"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__write_date
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__write_date
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__write_date
+msgid "Last Updated on"
+msgstr "Última Actualización el"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__message_main_attachment_id
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__message_main_attachment_id
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjunto Principal"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__message_has_error
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__message_has_error
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de Entrega de Mensaje"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__message_ids
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__message_ids
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__my_activity_date_deadline
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__my_activity_date_deadline
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Mi Fecha Límite de Actividad"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__name
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__activity_calendar_event_id
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__activity_calendar_event_id
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Siguiente Evento en el Calendario de Actividades"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__activity_date_deadline
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__activity_date_deadline
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Siguiente Fecha Límite de Actividad"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__activity_summary
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__activity_summary
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__activity_summary
+msgid "Next Activity Summary"
+msgstr "Siguiente Resumen de Actividad"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__activity_type_id
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__activity_type_id
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente Tipo de Actividad"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: lt_hr_novelty
+#: model:ir.model,name:lt_hr_novelty.model_hr_novelty
+msgid "Novelty of Payroll"
+msgstr "Novedad de Nómina"
+
+#. module: lt_hr_novelty
+#: model:ir.actions.act_window,name:lt_hr_novelty.action_hr_novelty
+msgid "Novelty"
+msgstr "Novedad"
+
+#. module: lt_hr_novelty
+#: model:ir.actions.act_window,name:lt_hr_novelty.action_hr_novelty_category
+msgid "Novelty Category"
+msgstr "Categoría de Novedad"
+
+#. module: lt_hr_novelty
+#: model:ir.actions.act_window,name:lt_hr_novelty.action_hr_novelty_type
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__novelty_type_id
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_search
+msgid "Novelty Type"
+msgstr "Tipo de Novedad"
+
+#. module: lt_hr_novelty
+#: model:ir.ui.menu,name:lt_hr_novelty.menu_hr_novelty
+#: model:ir.ui.menu,name:lt_hr_novelty.menu_hr_novelty_global
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_search
+msgid "Novelty's"
+msgstr "Novedades"
+
+#. module: lt_hr_novelty
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_type_search
+msgid "Novelty's Type"
+msgstr "Tipo de novedad"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__message_needaction_counter
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__message_needaction_counter
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de Acciones"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__message_has_error_counter
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__message_has_error_counter
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de Errores"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty__message_needaction_counter
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_category__message_needaction_counter
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_type__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty__message_has_error_counter
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_category__message_has_error_counter
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_type__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de entrega"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty__message_unread_counter
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_category__message_unread_counter
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_type__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leídos"
+
+#. module: lt_hr_novelty
+#: model:ir.model,name:lt_hr_novelty.model_hr_novelty_type
+msgid "Payroll Novelty Type"
+msgstr "Nómina Novedad Tipo"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields.selection,name:lt_hr_novelty.selection__hr_novelty__state__pending_approval
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_form
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_search
+msgid "Pending Approval"
+msgstr "Aprobación pendiente"
+
+#. module: lt_hr_novelty
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_form
+msgid "Period"
+msgstr "Período"
+
+#. module: lt_hr_novelty
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_form
+msgid "Properties"
+msgstr "Propiedades"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__quantity
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields.selection,name:lt_hr_novelty.selection__hr_novelty__state__rejected
+msgid "Refused"
+msgstr "Rechazado"
+
+#. module: lt_hr_novelty
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_form
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_search
+msgid "Rejected"
+msgstr "Rechazada"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__activity_user_id
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__activity_user_id
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: lt_hr_novelty
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_form
+msgid "Set To Draft"
+msgstr "Enviar a Borrador"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty__activity_state
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_category__activity_state
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_type__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Atrasado: la fecha de vencimiento ya pasó\n"
+"Hoy: la fecha de la actividad es hoy\n"
+"Planificado: Actividades futuras"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__type
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__type
+#: model:ir.ui.menu,name:lt_hr_novelty.menu_hr_novelty_type
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_search
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_type_search
+msgid "Type"
+msgstr "Tipo"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty__activity_exception_decoration
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_category__activity_exception_decoration
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_type__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de actividad de excepción registrada."
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__message_unread
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__message_unread
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes no leídos"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__message_unread_counter
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__message_unread_counter
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes no leídos"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__value
+msgid "Value"
+msgstr "Valor"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__wage
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty__wage
+msgid "Wage"
+msgstr "Salario"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__website_message_ids
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__website_message_ids
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty__website_message_ids
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_category__website_message_ids
+#: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_type__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicación del sitio web"

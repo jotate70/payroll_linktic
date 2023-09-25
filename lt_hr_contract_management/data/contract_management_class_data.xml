@@ -1,0 +1,39 @@
+<odoo>
+    <data noupdate="0">
+        <record id="contract_management_class_analytic_account_id" model="contract.management.class.setting">
+            <field name="name">Cuenta analítica</field>
+            <field name="code">analytic_account_id</field>
+            <field name="field_id" ref="om_hr_payroll_account.field_hr_contract__analytic_account_id"/>
+        </record>
+        <record id="contract_management_class_job_id" model="contract.management.class.setting">
+            <field name="name">Cargo</field>
+            <field name="code">job_id</field>
+            <field name="field_id" ref="hr_contract.field_hr_contract__job_id"/>
+        </record>
+        <record id="contract_management_class_wage" model="contract.management.class.setting">
+            <field name="name">Salario</field>
+            <field name="code">wage</field>
+            <field name="field_id" ref="hr_contract.field_hr_contract__wage"/>
+        </record>
+        <record id="contract_management_class_date_start" model="contract.management.class.setting">
+            <field name="name">Fecha inicio del contrato</field>
+            <field name="code">date_start</field>
+            <field name="field_id" ref="hr_contract.field_hr_contract__date_start"/>
+        </record>
+        <record id="contract_management_class_date_end" model="contract.management.class.setting">
+            <field name="name">Fecha Final del Contrato</field>
+            <field name="code">date_end</field>
+            <field name="field_id" ref="hr_contract.field_hr_contract__date_end"/>
+        </record>
+        <record id="contract_management_class_resource_calendar_id" model="contract.management.class.setting">
+            <field name="name">Planificación de trabajo</field>
+            <field name="code">resource_calendar_id</field>
+            <field name="field_id" ref="om_hr_payroll.field_hr_contract__resource_calendar_id"/>
+        </record>
+        <record id="contract_management_class_salary_type" model="contract.management.class.setting">
+            <field name="name">Tipo de salario</field>
+            <field name="code">salary_type</field>
+            <field name="field_id" ref="lt_hr_contract_management.field_hr_contract__salary_type"/>
+        </record>
+    </data>
+</odoo>

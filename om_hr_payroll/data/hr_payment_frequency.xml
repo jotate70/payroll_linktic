@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_payment_frequency_monthly" model="hr.payment.frequency">
+            <field name="name">Mensual</field>
+            <field name="code">MON</field>
+        </record>
+        <record id="hr_payment_frequency_bi_weekly" model="hr.payment.frequency">
+            <field name="name">Quincenal</field>
+            <field name="code">BI</field>
+        </record>
+        <record id="hr_payment_frequency_weekly" model="hr.payment.frequency">
+            <field name="name">Semanal</field>
+            <field name="code">WEEK</field>
+        </record>
+        <record id="hr_payment_frequency_day" model="hr.payment.frequency">
+            <field name="name">Día/s</field>
+            <field name="code">DAY/S</field>
+        </record>
+    </data>
+</odoo>
