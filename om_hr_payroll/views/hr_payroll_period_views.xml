@@ -4,7 +4,7 @@
             <field name="name">hr.payroll.period.form</field>
             <field name="model">hr.payroll.period</field>
             <field name="arch" type="xml">
-                <form string="Payroll Period">
+                <form string="Payroll Period" create="0">
                     <sheet>
                         <group>
                             <div>
@@ -37,7 +37,7 @@
             <field name="name">hr.payroll.period.tree</field>
             <field name="model">hr.payroll.period</field>
             <field name="arch" type="xml">
-                <tree edit="1" create="0">
+                <tree editable="bottom" create="0" js_class="button_in_tree">
                     <field name="name"/>
                     <field name="payment_frequency_id"/>
                     <field name="date_start"/>

@@ -41,9 +41,8 @@
                 </xpath>
                 <xpath expr="//field[@name='number']" position="before">
                     <field name="date"/>
-                    <field name="payment_date"/>
-                    <field name="payment_form_id"/>
-                    <field name="payment_method_id"/>
+                    <field name="payment_form_id" required="1"/>
+                    <field name="payment_method_id" required="1"/>
                 </xpath>
                 <xpath expr="//field[@name='line_ids']" position="after">
                     <group>

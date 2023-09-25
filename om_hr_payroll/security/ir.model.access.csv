@@ -17,3 +17,4 @@ access_payslip_lines_contribution_register_hr_user,payslip.lines.contribution.re
 access_hr_contract_type_manager,hr.contract.type.manager,model_hr_contract_type,hr_contract.group_hr_contract_manager,1,1,1,1
 access_hr_payment_frequency,hr.payment.frequency,model_hr_payment_frequency,hr_contract.group_hr_contract_manager,1,1,1,1
 access_hr_payroll_period,hr.payroll.period,model_hr_payroll_period,hr_contract.group_hr_contract_manager,1,1,1,1
+access_generate_payroll_period,generate.payroll.period,model_generate_payroll_period,hr_contract.group_hr_contract_manager,1,1,1,1

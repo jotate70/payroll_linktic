@@ -43,8 +43,8 @@
                     </button>
                 </xpath>
                 <xpath expr="//field[@name='ref']" position="after">
-                    <field name="payment_form_id"/>
-                    <field name="payment_method_id"/>
+                    <field name="payment_form_id" required="1"/>
+                    <field name="payment_method_id" required="1"/>
                     <field name="ei_operation"
                            attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund'))]}"/>
                     <field name="ei_correction_concept_credit_id"

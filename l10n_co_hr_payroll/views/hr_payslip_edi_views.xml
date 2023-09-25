@@ -61,8 +61,8 @@
                             <field name="company_id" groups="base.group_multi_company"/>
                         </group>
                         <group name="payment">
-                            <field name="payment_form_id" readonly="True"/>
-                            <field name="payment_method_id" readonly="True"/>
+                            <field name="payment_form_id" readonly="True" required="1"/>
+                            <field name="payment_method_id" readonly="True" required="1"/>
                         </group>
                     </group>
                     <notebook>

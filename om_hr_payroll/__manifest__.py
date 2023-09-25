@@ -50,7 +50,7 @@
             'om_hr_payroll/static/src/xml/base.xml',
         ],
         'web.assets_backend': [
-            'om_hr_payroll/static/src/js/action_call.js',
+            'om_hr_payroll/static/src/js/generate_periods.js',
         ],
     },
     'images': ['static/description/banner.png'],

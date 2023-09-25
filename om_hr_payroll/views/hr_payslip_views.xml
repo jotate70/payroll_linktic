@@ -74,11 +74,11 @@
             <field name="arch" type="xml">
                 <tree decoration-info="state in ('done')"
                       decoration-muted="state == 'cancel'" string="Payslips">
-                    <field name="number"/>
+                    <field name="number" force_save="1"/>
                     <field name="employee_id"/>
-                    <field name="name"/>
-                    <field name="date_from"/>
-                    <field name="date_to"/>
+                    <field name="name" force_save="1"/>
+                    <field name="date_from" force_save="1"/>
+                    <field name="date_to" force_save="1"/>
                     <field name="state"/>
                     <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
                     <field name="payslip_run_id" invisible="1"/>
@@ -107,7 +107,7 @@
                                     </div>
                                     <div class="col-12">
                                         <span>
-                                            <field name="date_from"/>
+                                            <field name="date_from" force_save="1"/>
                                             -
                                             <field name="date_to"/>
                                         </span>
@@ -167,18 +167,19 @@
                             </h1>
                         </div>
                         <group col="4">
-                            <label for="date_from" string="Period"/>
+                            <field name="payroll_period_id"/>
+                            <label for="date_from" string="Dates"/>
                             <div>
-                                <field name="date_from" class="oe_inline"/>
+                                <field name="date_from" class="oe_inline" force_save="1"/>
                                 -
-                                <field name="date_to" class="oe_inline"/>
+                                <field name="date_to" class="oe_inline" force_save="1"/>
                             </div>
                             <field name="contract_id"
                                    domain="[('employee_id','=',employee_id),('date_start','&lt;=',date_to),'|',('date_end','&gt;=',date_from),('date_end','=',False)]"
                                    context="{'default_employee_id': employee_id}"/>
-                            <field name="number"/>
+                            <field name="number" force_save="1"/>
                             <field name="struct_id" attrs="{'required':[('contract_id','!=',False)]}"/>
-                            <field name="name"/>
+                            <field name="name" force_save="1"/>
                             <field name="credit_note"/>
                         </group>
                         <notebook>
@@ -186,7 +187,7 @@
                                 <div class="o_group o_group_blue">
                                     <div class="o_group_name">
                                         <div style="background-color: #71639e; color: white; text-align: center;">
-                                            Worked Days
+                                            Detail Days
                                         </div>
                                     </div>
                                     <field name="worked_days_line_ids" readonly="1">

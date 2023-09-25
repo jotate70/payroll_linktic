@@ -6,7 +6,8 @@ class HrPaymentFrequency(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = 'Frequencies of payroll periods'
 
-    name = fields.Selection([('monthly', 'Monthly'), ('bi_weekly', 'Bi-Weekly'), ('week', 'Week')], string='Name', required=True)
+    name = fields.Selection([('monthly', 'Monthly'), ('bi_weekly', 'Bi-Weekly'), ('week', 'Week')], string='Name',
+                            required=True)
     code = fields.Char(string='Code', readonly=True)
     company_id = fields.Many2many('res.company', relation="hr_payment_company_rel", column1="hr_payment_id",
                                   column2="company_id", string='Company', default=lambda self: self.env.company)

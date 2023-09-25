@@ -171,7 +171,7 @@ class HrPayslipEdi(models.Model):
             locale = self.env.context.get('lang') or 'en_US'
             rec.name = _('Salary Slip of %s for %s') % (
                 employee.name,
-                tools.ustr(babel.dates.format_date(date=date_ym, format='MMMM-y', locale=locale))
+                tools.ustr(babel.dates.format_date(date=date_ym, format='MMMM-y', locale=locale)).capitalize()
             )
 
     def unlink(self):
@@ -380,8 +380,8 @@ class HrPayslipEdi(models.Model):
                 raise UserError(_("The payroll must have a payment form"))
             if not rec.payment_method_id:
                 raise UserError(_("The payroll must have a payment method"))
-            # if not rec.payment_date:
-            #     raise UserError(_("The payroll must have a payment date"))
+            if not rec.date:
+                raise UserError(_("The payroll must have a payment date"))
             if not rec.month:
                 raise UserError(_("The payroll must have a month"))
             if not rec.year:

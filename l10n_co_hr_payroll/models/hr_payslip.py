@@ -43,15 +43,12 @@ class HrPayslip(models.Model):
     edi_is_not_test = fields.Boolean(string="In production", default=False, copy=False)
 
     # Edi fields
-    date = fields.Date('Date Account', states={'draft': [('readonly', False)]}, readonly=True,
+    date = fields.Date('Date Account', states={'draft': [('readonly', False)]}, required=True, readonly=True,
                        help="Keep empty to use the period of the validation(Payslip) date.")
-    payment_date = fields.Date("Payment date", required=True, readonly=True, states={'draft': [('readonly', False)]},
-                               default=lambda self: fields.Date.to_string(
-                                   (datetime.now() + relativedelta(months=+1, day=1, days=-1)).date()))
     payment_form_id = fields.Many2one(comodel_name="l10n_co_edi_jorels.payment_forms", string="Payment form", default=1,
-                                      readonly=True, states={'draft': [('readonly', False)]}, copy=True)
+                                      copy=True)
     payment_method_id = fields.Many2one(comodel_name="l10n_co_edi_jorels.payment_methods", string="Payment method",
-                                        default=1, readonly=True, states={'draft': [('readonly', False)]}, copy=True)
+                                        default=1, copy=True)
     accrued_total_amount = fields.Monetary("Accrued", currency_field='currency_id', readonly=True, copy=True)
     deductions_total_amount = fields.Monetary("Deductions", currency_field='currency_id', readonly=True, copy=True)
     others_total_amount = fields.Monetary("Others", currency_field='currency_id', readonly=True, copy=True)
@@ -405,7 +402,7 @@ class HrPayslip(models.Model):
                 raise UserError(_("The payroll must have a payment form"))
             if not rec.payment_method_id:
                 raise UserError(_("The payroll must have a payment method"))
-            if not rec.payment_date:
+            if not rec.date:
                 raise UserError(_("The payroll must have a payment date"))
 
             rec.edi_sync = rec.company_id.edi_payroll_is_not_test
@@ -1314,7 +1311,7 @@ class HrPayslip(models.Model):
 
             # Payment
             payment_dates = [{
-                "date": fields.Date.to_string(rec.payment_date)
+                "date": fields.Date.to_string(rec.date)
             }]
 
             json_request = {}

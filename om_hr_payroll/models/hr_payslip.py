@@ -1,11 +1,64 @@
 # -*- coding:utf-8 -*-
 
 import babel
-from datetime import date, datetime, time
+from datetime import date, datetime, time, timedelta
 from dateutil.relativedelta import relativedelta
 from pytz import timezone
 from odoo import api, fields, models, tools, _
 from odoo.exceptions import UserError, ValidationError
+
+
+def is_last_day_of_february(date_end: date) -> bool:
+    last_february_day_in_given_year = date_end + relativedelta(month=3, day=1) + timedelta(days=-1)
+    return date == last_february_day_in_given_year
+
+
+def days360(
+    date_a: date, date_b: date, preserve_excel_compatibility: bool = True
+) -> int:
+    """
+    This method uses the the US/NASD Method (30US/360) to calculate the days between two
+    dates.
+
+    NOTE: to use the reference calculation method 'preserve_excel_compatibility' must be
+    set to false.
+    The default is to preserve compatibility. This means results are comparable to those
+    obtained with Excel or Calc.
+    This is a bug in Microsoft Office which is preserved for reasons of backward
+    compatibility. Open Office Calc also choose to "implement" this bug to be MS-Excel
+    compatible [1].
+
+    [1] http://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_Date_%26_Time_functions#Financial_date_systems
+    """
+    day_a = date_a.day
+    day_b = date_b.day
+
+    # Step 1 must be skipped to preserve Excel compatibility
+    # (1) If both date A and B fall on the last day of February, then date B will be
+    # changed to the 30th.
+    if (
+        not preserve_excel_compatibility
+        and is_last_day_of_february(date_a)
+        and is_last_day_of_february(date_b)
+    ):
+        day_b = 30
+
+    # (2) If date A falls on the 31st of a month or last day of February, then date A
+    # will be changed to the 30th.
+    if day_a == 31 or is_last_day_of_february(date_a):
+        day_a = 30
+
+    # (3) If date A falls on the 30th of a month after applying (2) above and date B
+    # falls on the 31st of a month, then date B will be changed to the 30th.
+    if day_a == (30) and day_b == (31):
+        day_b = 30
+
+    days = (
+        (date_b.year - date_a.year) * 360
+        + (date_b.month - date_a.month) * 30
+        + (day_b - day_a)
+    )
+    return days
 
 
 class HrPayslip(models.Model):
@@ -20,17 +73,14 @@ class HrPayslip(models.Model):
              'to the contract chosen. If you let empty the field contract, this field isn\'t '
              'mandatory anymore and thus the rules applied will be all the rules set on the '
              'structure of all contracts of the employee valid for the chosen period')
-    name = fields.Char(string='Payslip Name', readonly=True,
-        states={'draft': [('readonly', False)]})
-    number = fields.Char(string='Reference', readonly=True, copy=False,
-        states={'draft': [('readonly', False)]})
+    name = fields.Char(string='Payslip Name', readonly=True)
+    number = fields.Char(string='Reference', readonly=True, copy=False)
     employee_id = fields.Many2one('hr.employee', string='Employee', required=True, readonly=True,
         states={'draft': [('readonly', False)]})
     date_from = fields.Date(string='Date From', readonly=True, required=True,
-        default=lambda self: fields.Date.to_string(date.today().replace(day=1)), states={'draft': [('readonly', False)]})
+        default=lambda self: fields.Date.to_string(date.today().replace(day=1)))
     date_to = fields.Date(string='Date To', readonly=True, required=True,
-        default=lambda self: fields.Date.to_string((datetime.now() + relativedelta(months=+1, day=1, days=-1)).date()),
-        states={'draft': [('readonly', False)]})
+        default=lambda self: fields.Date.to_string((datetime.now() + relativedelta(months=+1, day=1, days=-1)).date()))
     # this is chaos: 4 states are defined, 3 are used ('verify' isn't) and 5 exist ('confirm' seems to have existed)
     state = fields.Selection([
         ('draft', 'Draft'),
@@ -56,7 +106,7 @@ class HrPayslip(models.Model):
         states={'draft': [('readonly', False)]})
     note = fields.Text(string='Internal Note', readonly=True, states={'draft': [('readonly', False)]})
     contract_id = fields.Many2one('hr.contract', string='Contract', readonly=True,
-        states={'draft': [('readonly', False)]})
+        states={'draft': [('readonly', False)]}, required=True)
     details_by_salary_rule_category = fields.One2many('hr.payslip.line',
         compute='_compute_details_by_salary_rule_category', string='Details by Salary Rule Category')
     credit_note = fields.Boolean(string='Credit Note', readonly=True,
@@ -65,6 +115,14 @@ class HrPayslip(models.Model):
     payslip_run_id = fields.Many2one('hr.payslip.run', string='Payslip Batches', readonly=True,
         copy=False, states={'draft': [('readonly', False)]})
     payslip_count = fields.Integer(compute='_compute_payslip_count', string="Payslip Computation Details")
+    payroll_period_id = fields.Many2one('hr.payroll.period', string="Period", required=True)
+
+    @api.onchange('payroll_period_id')
+    def _value_dates(self):
+        for record in self:
+            if record.payroll_period_id:
+                record.date_from = record.payroll_period_id.date_start
+                record.date_to = record.payroll_period_id.date_end
 
     def _compute_details_by_salary_rule_category(self):
         for payslip in self:
@@ -171,6 +229,11 @@ class HrPayslip(models.Model):
             number = payslip.number or self.env['ir.sequence'].next_by_code('salary.slip')
             # delete old payslip lines
             payslip.line_ids.unlink()
+            payslip.worked_days_line_ids = [(2, x,) for x in payslip.worked_days_line_ids.ids]
+            payslip.write({
+                'worked_days_line_ids': [(0, 0, x) for x in payslip.onchange_employee_id(payslip.date_from, payslip.date_to, payslip.employee_id.id,
+                                             payslip.contract_id.id)['value']['worked_days_line_ids']]
+            })
             # set the list of contract for which the rules have to be applied
             # if we don't give the contract, then the rules to apply should be for all current contracts of the employee
             contract_ids = payslip.contract_id.ids or \
@@ -218,19 +281,25 @@ class HrPayslip(models.Model):
                 if work_hours:
                     current_leave_struct['number_of_days'] -= hours / work_hours
 
-            # compute worked days
-            work_data = contract.employee_id._get_work_days_data(
-                day_from,
-                day_to,
-                calendar=contract.resource_calendar_id,
-                compute_leaves=False,
-            )
+            # compute worked days ORIGINAL MODULE
+            # work_data = contract.employee_id._get_work_days_data(
+            #     day_from,
+            #     day_to,
+            #     calendar=contract.resource_calendar_id,
+            #     compute_leaves=False,
+            # )
+
+            days = days360(date_from, date_to + relativedelta(days=1))
+            hours = contract.resource_calendar_id.hours_per_day * days
+
             attendances = {
-                'name': _("Normal Working Days paid at 100%"),
+                'name': _("Worked Days"),
                 'sequence': 1,
                 'code': 'WORK100',
-                'number_of_days': work_data['days'],
-                'number_of_hours': work_data['hours'],
+                # 'number_of_days': work_data['days'],
+                # 'number_of_hours': work_data['hours'],
+                'number_of_days': days,
+                'number_of_hours': hours,
                 'contract_id': contract.id,
             }
 
@@ -425,25 +494,21 @@ class HrPayslip(models.Model):
             return res
         ttyme = datetime.combine(fields.Date.from_string(date_from), time.min)
         employee = self.env['hr.employee'].browse(employee_id)
-        locale = self.env.context.get('lang') or 'en_US'
+        locale = self.env.context.get('lang') or 'es_CO'
         res['value'].update({
-            'name': _('Salary Slip of %s for %s') % (employee.name, tools.ustr(babel.dates.format_date(date=ttyme, format='MMMM-y', locale=locale))),
+            'name': _('Salary Slip of %s for %s') % (employee.name, tools.ustr(babel.dates.format_date(date=ttyme, format='MMMM-y', locale=locale)).capitalize()),
             'company_id': employee.company_id.id,
         })
 
-        if not self.env.context.get('contract'):
-            #fill with the first contract of the employee
-            contract_ids = self.get_contract(employee, date_from, date_to)
+        if contract_id:
+            #set the list of contract for which the input have to be filled
+            contract_ids = [contract_id]
         else:
-            if contract_id:
-                #set the list of contract for which the input have to be filled
-                contract_ids = [contract_id]
-            else:
-                #if we don't give the contract, then the input to fill should be for all current contracts of the employee
-                contract_ids = self.get_contract(employee, date_from, date_to)
-
+            #if we don't give the contract, then the input to fill should be for all current contracts of the employee
+            contract_ids = self.get_contract(employee, date_from, date_to)
         if not contract_ids:
             return res
+
         contract = self.env['hr.contract'].browse(contract_ids[0])
         res['value'].update({
             'contract_id': contract.id
@@ -457,10 +522,8 @@ class HrPayslip(models.Model):
         #computation of the salary input
         contracts = self.env['hr.contract'].browse(contract_ids)
         worked_days_line_ids = self.get_worked_day_lines(contracts, date_from, date_to)
-        input_line_ids = self.get_inputs(contracts, date_from, date_to)
         res['value'].update({
             'worked_days_line_ids': worked_days_line_ids,
-            'input_line_ids': input_line_ids,
         })
         return res
 
@@ -476,7 +539,7 @@ class HrPayslip(models.Model):
 
         ttyme = datetime.combine(fields.Date.from_string(date_from), time.min)
         locale = self.env.context.get('lang') or 'en_US'
-        self.name = _('Salary Slip of %s for %s') % (employee.name, tools.ustr(babel.dates.format_date(date=ttyme, format='MMMM-y', locale=locale)))
+        self.name = _('Salary Slip of %s for %s') % (employee.name, tools.ustr(babel.dates.format_date(date=ttyme, format='MMMM-y', locale=locale)).capitalize())
         self.company_id = employee.company_id
 
         if not self.env.context.get('contract') or not self.contract_id:
