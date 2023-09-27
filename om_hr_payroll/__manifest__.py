@@ -1,5 +1,4 @@
 # -*- coding:utf-8 -*-
-
 {
     'name': 'Odoo 15 HR Payroll',
     'category': 'Generic Modules/Human Resources',
@@ -24,6 +23,7 @@
         'data/hr_payroll_sequence.xml',
         'data/hr_payroll_category.xml',
         'data/hr_payroll_data.xml',
+        'data/hr_payment_frequency.xml',
         'data/mail_template.xml',
         # Wizard
         'wizard/hr_payroll_payslips_by_employees_views.xml',
@@ -56,3 +56,4 @@
     'images': ['static/description/banner.png'],
     'application': True,
 }
+

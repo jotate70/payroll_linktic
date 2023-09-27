@@ -6,16 +6,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-15 22:00+0000\n"
-"PO-Revision-Date: 2022-05-29 22:26-0400\n"
+"POT-Creation-Date: 2023-09-27 04:20+0000\n"
+"PO-Revision-Date: 2023-09-27 04:20+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"Language: es\n"
-"X-Generator: Poedit 2.3\n"
 
 #. module: om_hr_payroll
 #: code:addons/om_hr_payroll/models/hr_salary_rule.py:0
@@ -26,35 +24,34 @@ msgid ""
 "                        Here is the error received:\n"
 "                        %s\n"
 "                        "
-msgstr ""
+msgstr "\n Código Python incorrecto definido para la regla salarial %s (%s).\n Aquí está el error recibido:\n %s\n"
 
 #. module: om_hr_payroll
 #: code:addons/om_hr_payroll/models/hr_salary_rule.py:0
 #, python-format
 msgid ""
 "\n"
-"                        Wrong python condition defined for salary rule %s "
-"(%s).\n"
+"                        Wrong python condition defined for salary rule %s (%s).\n"
 "                        Here is the error received:\n"
 "                        %s\n"
 "                        "
-msgstr ""
+msgstr "\n Condición de Python incorrecta definida para la regla salarial %s (%s).\n Aquí está el error recibido:\n %s\n"
 
 #. module: om_hr_payroll
 #: code:addons/om_hr_payroll/models/hr_salary_rule.py:0
 #, python-format
 msgid "%s (copy)"
-msgstr ""
+msgstr "%s (copiar)"
 
 #. module: om_hr_payroll
 #: model:ir.actions.report,print_report_name:om_hr_payroll.action_report_payslip
 msgid "('Payslip - %s' % (object.employee_id.name))"
-msgstr ""
+msgstr "('Recibo de nómina - %s' % (object.employee_id.name))"
 
 #. module: om_hr_payroll
 #: model:ir.actions.report,print_report_name:om_hr_payroll.payslip_details_report
 msgid "('Payslip Details - %s' % (object.employee_id.name))"
-msgstr ""
+msgstr "('Detalles del recibo de nómina - %s' % (object.employee_id.name))"
 
 #. module: om_hr_payroll
 #: model:ir.model.fields,help:om_hr_payroll.field_hr_payslip__state
@@ -66,26 +63,52 @@ msgid ""
 "* If the payslip is confirmed then status is set to 'Done'.\n"
 "                \n"
 "* When user cancel payslip the status is 'Rejected'."
-msgstr ""
+msgstr "* Cuando se crea el recibo de nómina, el estado es 'Borrador'\n \n* Si el recibo de nómina está bajo verificación, el estado es 'En espera'.\n \n* Si el recibo de nómina está confirmado, el estado se establece en 'Listo "
 "* Cuando la nómina es creada el estado es 'Borrador'\n"
 "                \n"
 "* Si la nómina está bajo verificación el estado es 'En Espera'.\n"
 "                \n"
-"* Si la nómina está confirmada entonces el estado se cambia a "
-"'Finalizado'.\n"
+"* Si la nómina está confirmada entonces el estado se cambia a 'Finalizado'.\n"
 "                \n"
 "* Cuando el usuario cancela la nómina el estado es 'Rechazado'."
+
+#. module: om_hr_payroll
+#: model:ir.model.fields.selection,name:om_hr_payroll.selection__generate_payroll_period__year__2021
+msgid "2021"
+msgstr ""
+
+#. module: om_hr_payroll
+#: model:ir.model.fields.selection,name:om_hr_payroll.selection__generate_payroll_period__year__2022
+msgid "2022"
+msgstr ""
+
+#. module: om_hr_payroll
+#: model:ir.model.fields.selection,name:om_hr_payroll.selection__generate_payroll_period__year__2023
+msgid "2023"
+msgstr ""
+
+#. module: om_hr_payroll
+#: model:ir.model.fields.selection,name:om_hr_payroll.selection__generate_payroll_period__year__2024
+msgid "2024"
+msgstr ""
+
+#. module: om_hr_payroll
+#: model:ir.model.fields.selection,name:om_hr_payroll.selection__generate_payroll_period__year__2025
+msgid "2025"
+msgstr ""
+
+#. module: om_hr_payroll
+#: model:ir.model.fields.selection,name:om_hr_payroll.selection__generate_payroll_period__year__2026
+msgid "2026"
+msgstr ""
 
 #. module: om_hr_payroll
 #: model:mail.template,body_html:om_hr_payroll.mail_template_payslip
 msgid ""
 "<div style=\"margin: 0px; padding: 0px;\">\n"
-"                    <p> Dear <t t-out=\"object.employee_id.name or ''\"/>,</"
-"p>\n"
-"                    <p>Please find the attached payslip of the period: <t t-"
-"out=\"object.date_from\"/> - <t t-out=\"object.date_to\"/></p>\n"
-"                    <p>In case of any queries concerning this matter, do "
-"not hesitate to contact our accounting/hr department.</p>\n"
+"                    <p> Dear <t t-out=\"object.employee_id.name or ''\"/>,</p>\n"
+"                    <p>Please find the attached payslip of the period: <t t-out=\"object.date_from\"/> - <t t-out=\"object.date_to\"/></p>\n"
+"                    <p>In case of any queries concerning this matter, do not hesitate to contact our accounting/hr department.</p>\n"
 "                    <br/>\n"
 "                    Best Regards,\n"
 "                    <br/>\n"
@@ -93,22 +116,28 @@ msgid ""
 "                    <br/>\n"
 "                </div>\n"
 "            "
-msgstr ""
+msgstr "<div style=\"margin: 0px; padding: 0px;\">\n <p> Estimado <t t-out=\"object.employee_id.name o ''\"/>,</p> "
 
 #. module: om_hr_payroll
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.view_hr_payslip_by_employees
 msgid ""
-"<span colspan=\"4\" nolabel=\"1\">This wizard will generate payslips for "
-"all selected employee(s) based\n"
-"                        on the dates and credit note specified on Payslips "
-"Run.\n"
+"<span colspan=\"4\" nolabel=\"1\">This wizard will generate payslips for all selected employee(s) based\n"
+"                        on the dates and credit note specified on Payslips Run.\n"
 "                    </span>"
-msgstr ""
+msgstr "<span colspan=\"4\" nolabel=\"1\">Este asistente generará nóminas para todos los empleados seleccionados en función\n de las fechas y la nota de crédito especificadas en Payslips Run.\n </span "
+
+#. module: om_hr_payroll
+#: model_terms:ir.ui.view,arch_db:om_hr_payroll.generate_payroll_period
+msgid ""
+"<span colspan=\"4\" nolabel=\"1\">This wizard will generate period payslips for year and type\n"
+"                            selected.\n"
+"                        </span>"
+msgstr "<span colspan=\"4\" nolabel=\"1\">Este asistente generará nóminas periódicas para el año y el tipo\n seleccionado.\n </span>"
 
 #. module: om_hr_payroll
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.hr_contract_form_inherit
 msgid "<span>/ month</span>"
-msgstr ""
+msgstr "<span>/ mes</span>"
 
 #. module: om_hr_payroll
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.report_payslip
@@ -160,7 +189,7 @@ msgstr "<strong>Designación</strong>"
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.report_payslip
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.report_payslip_details
 msgid "<strong>Email</strong>"
-msgstr ""
+msgstr "<strong>Correo electrónico</strong>"
 
 #. module: om_hr_payroll
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.report_payslip
@@ -194,10 +223,9 @@ msgstr ""
 #: model_terms:ir.actions.act_window,help:om_hr_payroll.action_contribution_register_form
 msgid ""
 "A contribution register is a third party involved in the salary\n"
-"                payment of the employees. It can be the social security, "
-"the\n"
+"                payment of the employees. It can be the social security, the\n"
 "                state or anyone that collect or inject money on payslips."
-msgstr ""
+msgstr "Un registro de cotizaciones es un tercero involucrado en el pago de salarios de los empleados. "
 
 #. module: om_hr_payroll
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.res_config_settings_view_form
@@ -211,9 +239,11 @@ msgid "Accounting Information"
 msgstr "Información contable"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__message_needaction
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__message_needaction
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Acción necesaria"
 
 #. module: om_hr_payroll
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip_line__active
@@ -222,29 +252,37 @@ msgid "Active"
 msgstr "Activo"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__activity_ids
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__activity_ids
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Actividades"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__activity_exception_decoration
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__activity_exception_decoration
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Decoración de excepción de actividad"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__activity_state
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__activity_state
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "Estado de actividad"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__activity_type_icon
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__activity_type_icon
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Icono de tipo de actividad"
 
 #. module: om_hr_payroll
 #: model_terms:ir.actions.act_window,help:om_hr_payroll.action_contribution_register_form
 msgid "Add a new contribution register"
-msgstr ""
+msgstr "Agregar un nuevo registro de contribución"
 
 #. module: om_hr_payroll
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.view_hr_payslip_form
@@ -305,14 +343,16 @@ msgstr "Aparece en la nómina"
 msgid ""
 "Applied this rule for calculation if condition is true. You can specify "
 "condition like basic > 1000."
-msgstr ""
+msgstr "Se aplicó esta regla para el cálculo si la condición es verdadera. "
 "Se utiliza esta regla para el cálculo si la condición es verdadera. Puede "
 "especificar una condición como: 'basic > 1000'."
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__message_attachment_count
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__message_attachment_count
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Recuento de archivos adjuntos"
 
 #. module: om_hr_payroll
 #: model:hr.salary.rule.category,name:om_hr_payroll.BASIC
@@ -323,6 +363,11 @@ msgstr "Básico"
 #: model:hr.salary.rule,name:om_hr_payroll.hr_rule_basic
 msgid "Basic Salary"
 msgstr "Salario básico total"
+
+#. module: om_hr_payroll
+#: model:ir.model.fields.selection,name:om_hr_payroll.selection__hr_payment_frequency__name__bi_weekly
+msgid "Bi-Weekly"
+msgstr "Quincenal"
 
 #. module: om_hr_payroll
 #: model:ir.model.fields.selection,name:om_hr_payroll.selection__hr_contract__schedule_pay__bi-monthly
@@ -340,6 +385,7 @@ msgid "Calculations"
 msgstr "Cálculos"
 
 #. module: om_hr_payroll
+#: model_terms:ir.ui.view,arch_db:om_hr_payroll.generate_payroll_period
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.view_payslip_lines_contribution_register
 msgid "Cancel"
 msgstr "Cancelar"
@@ -387,6 +433,7 @@ msgstr "Cerrar"
 #. module: om_hr_payroll
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contract_advantage_template__code
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_leave_type__code
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__code
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip_input__code
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip_line__code
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip_worked_days__code
@@ -396,6 +443,7 @@ msgstr "Cerrar"
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.report_contribution_register
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.report_payslip
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.report_payslip_details
+#: model_terms:ir.ui.view,arch_db:om_hr_payroll.view_payment_frequency_search
 msgid "Code"
 msgstr "Código"
 
@@ -411,12 +459,17 @@ msgid "Companies"
 msgstr "Compañías"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_generate_payroll_period__company_id
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contribution_register__company_id
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__company_id
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__company_ids
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__company_id
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_structure__company_id
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__company_id
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip_line__company_id
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_salary_rule__company_id
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_salary_rule_category__company_id
+#: model_terms:ir.ui.view,arch_db:om_hr_payroll.view_payroll_period_search
 msgid "Company"
 msgstr "Compañía"
 
@@ -430,7 +483,7 @@ msgstr "Contribución compañía"
 #: code:addons/om_hr_payroll/models/hr_payslip.py:0
 #, python-format
 msgid "Compose Email"
-msgstr ""
+msgstr "Redactar correo electrónico"
 
 #. module: om_hr_payroll
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.hr_salary_rule_form
@@ -456,7 +509,7 @@ msgstr "Condiciones"
 #. module: om_hr_payroll
 #: model:ir.model,name:om_hr_payroll.model_res_config_settings
 msgid "Config Settings"
-msgstr "Opciones de configuración"
+msgstr "Opciones de Configuración"
 
 #. module: om_hr_payroll
 #: model:ir.ui.menu,name:om_hr_payroll.menu_hr_payroll_configuration
@@ -528,9 +581,22 @@ msgid "Contribution Registers"
 msgstr "Registros de contribución"
 
 #. module: om_hr_payroll
+#: model_terms:ir.actions.act_window,help:om_hr_payroll.hr_payroll_period_action
+msgid "Create the first payroll period."
+msgstr "Crear el primer periodo de nómina."
+
+#. module: om_hr_payroll
+#: model_terms:ir.actions.act_window,help:om_hr_payroll.hr_payment_frequency_action
+msgid "Create the payment frequency."
+msgstr "Crear la frecuencia de pago."
+
+#. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_generate_payroll_period__create_uid
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contract_advantage_template__create_uid
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contract_type__create_uid
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contribution_register__create_uid
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__create_uid
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__create_uid
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_structure__create_uid
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__create_uid
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip_employees__create_uid
@@ -546,9 +612,12 @@ msgid "Created by"
 msgstr "Creado por"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_generate_payroll_period__create_date
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contract_advantage_template__create_date
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contract_type__create_date
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contribution_register__create_date
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__create_date
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__create_date
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_structure__create_date
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__create_date
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip_employees__create_date
@@ -575,6 +644,11 @@ msgid "DA"
 msgstr ""
 
 #. module: om_hr_payroll
+#: model_terms:ir.ui.view,arch_db:om_hr_payroll.view_payroll_period_search
+msgid "Date End"
+msgstr "Fecha de finalización"
+
+#. module: om_hr_payroll
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__date_from
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip_run__date_start
 #: model:ir.model.fields,field_description:om_hr_payroll.field_payslip_lines_contribution_register__date_from
@@ -582,11 +656,31 @@ msgid "Date From"
 msgstr "Fecha desde"
 
 #. module: om_hr_payroll
+#: model_terms:ir.ui.view,arch_db:om_hr_payroll.view_payroll_period_search
+msgid "Date Start"
+msgstr "Fecha de inicio"
+
+#. module: om_hr_payroll
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__date_to
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip_run__date_end
 #: model:ir.model.fields,field_description:om_hr_payroll.field_payslip_lines_contribution_register__date_to
 msgid "Date To"
 msgstr "Fecha hasta"
+
+#. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__date_end
+msgid "Date end"
+msgstr "fecha final"
+
+#. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__date_start
+msgid "Date start"
+msgstr "fecha de inicio"
+
+#. module: om_hr_payroll
+#: model_terms:ir.ui.view,arch_db:om_hr_payroll.view_hr_payslip_form
+msgid "Dates"
+msgstr "Fechas"
 
 #. module: om_hr_payroll
 #: model:hr.salary.rule,name:om_hr_payroll.hr_rule_da
@@ -621,7 +715,7 @@ msgid ""
 "the contract chosen. If you let empty the field contract, this field isn't "
 "mandatory anymore and thus the rules applied will be all the rules set on "
 "the structure of all contracts of the employee valid for the chosen period"
-msgstr ""
+msgstr "Define las reglas que se deben aplicar a esta nómina, según el contrato elegido. "
 "Define las reglas que serán aplicadas a esta nómina, de acuerdo con el "
 "contrato escogido. Si deja vacío el campo contrato, este campo no será "
 "obligatorio y por tanto se aplicarán las reglas válidas establecidas en "
@@ -643,6 +737,11 @@ msgstr "Descripción"
 
 #. module: om_hr_payroll
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.view_hr_payslip_form
+msgid "Detail Days"
+msgstr "Días de detalle"
+
+#. module: om_hr_payroll
+#: model_terms:ir.ui.view,arch_db:om_hr_payroll.view_hr_payslip_form
 msgid "Details By Salary Rule Category"
 msgstr "Detalles por categoría de regla salarial"
 
@@ -653,9 +752,12 @@ msgid "Details by Salary Rule Category"
 msgstr "Detalles por categoría de regla salarial"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_generate_payroll_period__display_name
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contract_advantage_template__display_name
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contract_type__display_name
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contribution_register__display_name
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__display_name
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__display_name
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_structure__display_name
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__display_name
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip_employees__display_name
@@ -765,7 +867,7 @@ msgstr "Empleados"
 #: code:addons/om_hr_payroll/models/hr_salary_rule.py:0
 #, python-format
 msgid "Error! You cannot create recursive hierarchy of Salary Rule Category."
-msgstr ""
+msgstr "¡Error! "
 "Error! No puede crear una jerarquía recursiva de la Categoría Regla Salarial"
 
 #. module: om_hr_payroll
@@ -778,9 +880,15 @@ msgstr "Error! No puede crear una jerarquía recursiva de Regla Salarial"
 #: model:ir.model.fields,help:om_hr_payroll.field_hr_payslip_line__register_id
 #: model:ir.model.fields,help:om_hr_payroll.field_hr_salary_rule__register_id
 msgid "Eventual third party involved in the salary payment of the employees."
-msgstr ""
+msgstr "Tercero eventual involucrado en el pago de salarios de los empleados."
 "Empresa externa eventual involucrada en el pago de salarios de los "
 "empleados."
+
+#. module: om_hr_payroll
+#: code:addons/om_hr_payroll/wizard/generate_payroll_period.py:0
+#, python-format
+msgid "First Bi Weekly"
+msgstr "Primer bisemanal"
 
 #. module: om_hr_payroll
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip_line__amount_fix
@@ -791,19 +899,25 @@ msgid "Fixed Amount"
 msgstr "Importe fijo"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__message_follower_ids
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__message_follower_ids
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Seguidores"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__message_partner_ids
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__message_partner_ids
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Seguidores (Socios)"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,help:om_hr_payroll.field_hr_payment_frequency__activity_type_icon
+#: model:ir.model.fields,help:om_hr_payroll.field_hr_payroll_period__activity_type_icon
 #: model:ir.model.fields,help:om_hr_payroll.field_hr_payslip__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+msgstr "Icono de fuente impresionante, p. "
 
 #. module: om_hr_payroll
 #: model:ir.model.fields,help:om_hr_payroll.field_hr_payslip_line__amount_percentage
@@ -818,14 +932,26 @@ msgid "Form content is missing, this report cannot be printed."
 msgstr "Falta el contenido del formulario, este informe no se puede imprimir."
 
 #. module: om_hr_payroll
-#: model_terms:ir.ui.view,arch_db:om_hr_payroll.hr_salary_rule_form
-msgid "General"
-msgstr "General"
+#: model:ir.model,name:om_hr_payroll.model_hr_payment_frequency
+msgid "Frequencies of payroll periods"
+msgstr "Frecuencias de periodos de nómina"
 
 #. module: om_hr_payroll
+#: model_terms:ir.ui.view,arch_db:om_hr_payroll.hr_salary_rule_form
+msgid "General"
+msgstr "general"
+
+#. module: om_hr_payroll
+#: model_terms:ir.ui.view,arch_db:om_hr_payroll.generate_payroll_period
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.view_hr_payslip_by_employees
 msgid "Generate"
 msgstr "Generar"
+
+#. module: om_hr_payroll
+#: model:ir.model,name:om_hr_payroll.model_generate_payroll_period
+#: model_terms:ir.ui.view,arch_db:om_hr_payroll.generate_payroll_period
+msgid "Generate Payroll Period"
+msgstr "Generar Período de Nómina"
 
 #. module: om_hr_payroll
 #: model:ir.actions.act_window,name:om_hr_payroll.action_hr_payslip_by_employees
@@ -834,9 +960,22 @@ msgid "Generate Payslips"
 msgstr "Generar nóminas"
 
 #. module: om_hr_payroll
+#. openerp-web
+#: code:addons/om_hr_payroll/static/src/xml/base.xml:0
+#, python-format
+msgid "Generate Periods"
+msgstr "Generar períodos"
+
+#. module: om_hr_payroll
 #: model:ir.model,name:om_hr_payroll.model_hr_payslip_employees
 msgid "Generate payslips for all selected employees"
 msgstr "Generar las nóminas para todos los empleados seleccionados"
+
+#. module: om_hr_payroll
+#: code:addons/om_hr_payroll/wizard/generate_payroll_period.py:0
+#, python-format
+msgid "Generated Payroll Period"
+msgstr "Período de Nómina Generado"
 
 #. module: om_hr_payroll
 #: model:ir.model.fields,help:om_hr_payroll.field_hr_contract_type__sequence
@@ -865,7 +1004,7 @@ msgstr "Agrupar por"
 #. module: om_hr_payroll
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.res_config_settings_view_form
 msgid "HR Payroll Accounting"
-msgstr ""
+msgstr "Contabilidad de nómina de recursos humanos"
 
 #. module: om_hr_payroll
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contract__hra
@@ -873,9 +1012,11 @@ msgid "HRA"
 msgstr ""
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__has_message
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__has_message
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "Tiene mensaje"
 
 #. module: om_hr_payroll
 #: model:hr.salary.rule,name:om_hr_payroll.hr_rule_hra
@@ -889,9 +1030,12 @@ msgid "House rent allowance."
 msgstr "Bono por alquiler de casa."
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_generate_payroll_period__id
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contract_advantage_template__id
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contract_type__id
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contribution_register__id
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__id
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__id
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_structure__id
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__id
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip_employees__id
@@ -904,36 +1048,45 @@ msgstr "Bono por alquiler de casa."
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_salary_rule_category__id
 #: model:ir.model.fields,field_description:om_hr_payroll.field_payslip_lines_contribution_register__id
 msgid "ID"
-msgstr ""
+msgstr "identificación"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__activity_exception_icon
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__activity_exception_icon
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "icono"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,help:om_hr_payroll.field_hr_payment_frequency__activity_exception_icon
+#: model:ir.model.fields,help:om_hr_payroll.field_hr_payroll_period__activity_exception_icon
 #: model:ir.model.fields,help:om_hr_payroll.field_hr_payslip__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Icono para indicar una actividad de excepción."
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,help:om_hr_payroll.field_hr_payment_frequency__message_needaction
+#: model:ir.model.fields,help:om_hr_payroll.field_hr_payment_frequency__message_unread
+#: model:ir.model.fields,help:om_hr_payroll.field_hr_payroll_period__message_needaction
+#: model:ir.model.fields,help:om_hr_payroll.field_hr_payroll_period__message_unread
 #: model:ir.model.fields,help:om_hr_payroll.field_hr_payslip__message_needaction
 #: model:ir.model.fields,help:om_hr_payroll.field_hr_payslip__message_unread
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Si está marcado, los mensajes nuevos requieren su atención."
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,help:om_hr_payroll.field_hr_payment_frequency__message_has_error
+#: model:ir.model.fields,help:om_hr_payroll.field_hr_payroll_period__message_has_error
 #: model:ir.model.fields,help:om_hr_payroll.field_hr_payslip__message_has_error
-#: model:ir.model.fields,help:om_hr_payroll.field_hr_payslip__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
 
 #. module: om_hr_payroll
 #: model:ir.model.fields,help:om_hr_payroll.field_hr_payslip_run__credit_note
 msgid ""
 "If its checked, indicates that all payslips generated from here are refund "
 "payslips."
-msgstr ""
+msgstr "Si está marcado, indica que todos los recibos de nómina generados desde aquí son recibos de reembolso."
 "Si está marcada, indica que todas las nóminas generadas desde aquí son "
 "nóminas reembolso."
 
@@ -943,7 +1096,7 @@ msgstr ""
 msgid ""
 "If the active field is set to false, it will allow you to hide the salary "
 "rule without removing it."
-msgstr ""
+msgstr "Si el campo activo se establece en falso, le permitirá ocultar la regla salarial sin eliminarla."
 "Si el campo activo se establece a falso, se puede ocultar la regla salarial "
 "sin eliminarla."
 
@@ -954,7 +1107,6 @@ msgstr "Indica que esta nómina incluye una factura rectificativa de otra"
 
 #. module: om_hr_payroll
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.hr_salary_rule_form
-#: model_terms:ir.ui.view,arch_db:om_hr_payroll.view_hr_payslip_form
 msgid "Input Data"
 msgstr "Datos de entrada"
 
@@ -971,9 +1123,11 @@ msgid "Internal Note"
 msgstr "Nota interna"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__message_is_follower
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__message_is_follower
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Es seguidor"
 
 #. module: om_hr_payroll
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.hr_payslip_run_view_kanban
@@ -986,27 +1140,30 @@ msgid ""
 "It is used in computation for percentage and fixed amount. For e.g. A rule "
 "for Meal Voucher having fixed amount of 1€ per worked day can have its "
 "quantity defined in expression like worked_days.WORK100.number_of_days."
-msgstr ""
+msgstr "Se utiliza en el cálculo de porcentaje y cantidad fija. "
 "Es usada para calcular el porcentaje y la cantidad fija, por ejemplo, un "
 "vale de alimentos con una cantidad fija de 1€ por día trabajado puede tener "
-"una cantidad definida en la expresión como worked_days.WORK100."
-"number_of_days."
+"una cantidad definida en la expresión como "
+"worked_days.WORK100.number_of_days."
 
 #. module: om_hr_payroll
 #: model:ir.model.fields,help:om_hr_payroll.field_hr_payslip_input__amount
 msgid ""
-"It is used in computation. For e.g. A rule for sales having 1% commission "
-"of basic salary for per product can defined in expression like result = "
+"It is used in computation. For e.g. A rule for sales having 1% commission of"
+" basic salary for per product can defined in expression like result = "
 "inputs.SALEURO.amount * contract.wage*0.01."
-msgstr ""
+msgstr "Se utiliza en computación. "
 "Se usa en el cálculo. Por ejemplo, una regla para ventas con un 1% de "
 "comisión del salario básico para cada producto puede ser definida con una "
 "expresión como 'result = inputs.SALEURO.amount * contract.wage*0.01'."
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_generate_payroll_period____last_update
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contract_advantage_template____last_update
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contract_type____last_update
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contribution_register____last_update
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency____last_update
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period____last_update
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_structure____last_update
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip____last_update
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip_employees____last_update
@@ -1022,9 +1179,12 @@ msgid "Last Modified on"
 msgstr "Última modificación en"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_generate_payroll_period__write_uid
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contract_advantage_template__write_uid
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contract_type__write_uid
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contribution_register__write_uid
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__write_uid
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__write_uid
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_structure__write_uid
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__write_uid
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip_employees__write_uid
@@ -1040,9 +1200,12 @@ msgid "Last Updated by"
 msgstr "Última actualización por"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_generate_payroll_period__write_date
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contract_advantage_template__write_date
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contract_type__write_date
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contribution_register__write_date
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__write_date
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__write_date
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_structure__write_date
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__write_date
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip_employees__write_date
@@ -1062,7 +1225,7 @@ msgstr "Última actualización el"
 msgid ""
 "Linking a salary category to its parent is used only for the reporting "
 "purpose."
-msgstr ""
+msgstr "La vinculación de una categoría salarial a su principal se utiliza únicamente con fines de generación de informes."
 "Enlazar una categoría salarial con su padre se usa sólo para los informes."
 
 #. module: om_hr_payroll
@@ -1081,9 +1244,11 @@ msgid "Made Payment Order ? "
 msgstr "¿Realizar orden de pago? "
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__message_main_attachment_id
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__message_main_attachment_id
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "Accesorio principal"
 
 #. module: om_hr_payroll
 #: model:res.groups,name:om_hr_payroll.group_hr_payroll_manager
@@ -1126,14 +1291,18 @@ msgid "Medical allowance"
 msgstr "Medical Allowance"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__message_has_error
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__message_has_error
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "error de entrega de mensaje"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__message_ids
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__message_ids
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Mensajes"
 
 #. module: om_hr_payroll
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip_line__condition_range_min
@@ -1147,7 +1316,10 @@ msgid "Miscellaneous"
 msgstr "Miscelánea"
 
 #. module: om_hr_payroll
+#: code:addons/om_hr_payroll/wizard/generate_payroll_period.py:0
 #: model:ir.model.fields.selection,name:om_hr_payroll.selection__hr_contract__schedule_pay__monthly
+#: model:ir.model.fields.selection,name:om_hr_payroll.selection__hr_payment_frequency__name__monthly
+#, python-format
 msgid "Monthly"
 msgstr "Mensual"
 
@@ -1157,19 +1329,24 @@ msgid "Monthly Advantages in Cash"
 msgstr "Beneficios mensuales en efectivo"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__my_activity_date_deadline
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__my_activity_date_deadline
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Fecha límite de mi actividad"
 
 #. module: om_hr_payroll
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contract_advantage_template__name
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contract_type__name
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contribution_register__name
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__name
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__name
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_structure__name
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip_line__name
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip_run__name
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_salary_rule__name
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_salary_rule_category__name
+#: model_terms:ir.ui.view,arch_db:om_hr_payroll.hr_payroll_period_form
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.report_contribution_register
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.report_payslip
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.report_payslip_details
@@ -1197,24 +1374,32 @@ msgid "New Contract"
 msgstr "Nuevo contrato"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__activity_calendar_event_id
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__activity_calendar_event_id
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
-msgstr ""
+msgstr "Próximo evento del calendario de actividades"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__activity_date_deadline
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__activity_date_deadline
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Fecha límite para la próxima actividad"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__activity_summary
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__activity_summary
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Resumen de la próxima actividad"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__activity_type_id
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__activity_type_id
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Siguiente tipo de actividad"
 
 #. module: om_hr_payroll
 #: code:addons/om_hr_payroll/models/hr_payslip.py:0
@@ -1222,13 +1407,7 @@ msgstr ""
 msgid ""
 "No running contract found for the employee: %s or no contract in the given "
 "period"
-msgstr ""
-
-#. module: om_hr_payroll
-#: code:addons/om_hr_payroll/models/hr_payslip.py:0
-#, python-format
-msgid "Normal Working Days paid at 100%"
-msgstr "Días de trabajo normales pagados al 100%"
+msgstr "No se encontró ningún contrato vigente para el empleado: %s o ningún contrato en el período indicado"
 
 #. module: om_hr_payroll
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.hr_salary_rule_category_form
@@ -1236,9 +1415,11 @@ msgid "Notes"
 msgstr "Notas"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__message_needaction_counter
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__message_needaction_counter
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Número de acciones"
 
 #. module: om_hr_payroll
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip_worked_days__number_of_days
@@ -1251,24 +1432,32 @@ msgid "Number of Hours"
 msgstr "Número de horas"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__message_has_error_counter
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__message_has_error_counter
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Número de errores"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,help:om_hr_payroll.field_hr_payment_frequency__message_needaction_counter
+#: model:ir.model.fields,help:om_hr_payroll.field_hr_payroll_period__message_needaction_counter
 #: model:ir.model.fields,help:om_hr_payroll.field_hr_payslip__message_needaction_counter
 msgid "Number of messages which requires an action"
-msgstr ""
+msgstr "Número de mensajes que requieren una acción"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,help:om_hr_payroll.field_hr_payment_frequency__message_has_error_counter
+#: model:ir.model.fields,help:om_hr_payroll.field_hr_payroll_period__message_has_error_counter
 #: model:ir.model.fields,help:om_hr_payroll.field_hr_payslip__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Número de mensajes con error de entrega"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,help:om_hr_payroll.field_hr_payment_frequency__message_unread_counter
+#: model:ir.model.fields,help:om_hr_payroll.field_hr_payroll_period__message_unread_counter
 #: model:ir.model.fields,help:om_hr_payroll.field_hr_payslip__message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
+msgstr "Número de mensajes no leídos"
 
 #. module: om_hr_payroll
 #: model:res.groups,name:om_hr_payroll.group_hr_payroll_user
@@ -1280,11 +1469,6 @@ msgstr "Oficial"
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contract__other_allowance
 msgid "Other Allowance"
 msgstr "Otras bonificaciones"
-
-#. module: om_hr_payroll
-#: model_terms:ir.ui.view,arch_db:om_hr_payroll.view_hr_payslip_form
-msgid "Other Inputs"
-msgstr "Otras entradas"
 
 #. module: om_hr_payroll
 #: model:ir.model.fields,help:om_hr_payroll.field_hr_contract__other_allowance
@@ -1321,7 +1505,7 @@ msgstr "Nómina"
 #. module: om_hr_payroll
 #: model:ir.actions.report,name:om_hr_payroll.action_report_payslip
 msgid "PaySlip"
-msgstr ""
+msgstr "Recibo de nómina"
 
 #. module: om_hr_payroll
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.view_hr_payslip_filter
@@ -1354,6 +1538,20 @@ msgid "PaySlip Name"
 msgstr "Nombre de la nómina"
 
 #. module: om_hr_payroll
+#: model:ir.actions.act_window,name:om_hr_payroll.hr_payment_frequency_action
+#: model:ir.ui.menu,name:om_hr_payroll.hr_payment_frequency_menu
+#: model_terms:ir.ui.view,arch_db:om_hr_payroll.hr_payment_frequency_form
+#: model_terms:ir.ui.view,arch_db:om_hr_payroll.view_payroll_period_search
+msgid "Payment Frequency"
+msgstr "Frecuencia de pago"
+
+#. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_generate_payroll_period__payment_frequency_id
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__payment_frequency_id
+msgid "Payment frequency"
+msgstr "Frecuencia de pago"
+
+#. module: om_hr_payroll
 #: model:ir.ui.menu,name:om_hr_payroll.menu_hr_payroll_root
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.res_config_settings_view_form
 msgid "Payroll"
@@ -1362,12 +1560,12 @@ msgstr "Nómina"
 #. module: om_hr_payroll
 #: model:ir.model.fields,field_description:om_hr_payroll.field_res_config_settings__module_om_hr_payroll_account
 msgid "Payroll Accounting"
-msgstr ""
+msgstr "Contabilidad de nómina"
 
 #. module: om_hr_payroll
 #: model:ir.model,name:om_hr_payroll.model_report_om_om_hr_payroll_report_contribution_register
 msgid "Payroll Contribution Register Report"
-msgstr ""
+msgstr "Informe de registro de contribuciones de nómina"
 
 #. module: om_hr_payroll
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.res_config_settings_view_form
@@ -1375,9 +1573,21 @@ msgid "Payroll Entries"
 msgstr "Registros de la nómina"
 
 #. module: om_hr_payroll
+#: model:ir.actions.act_window,name:om_hr_payroll.hr_payroll_period_action
+#: model:ir.ui.menu,name:om_hr_payroll.hr_payroll_period_menu
+#: model_terms:ir.ui.view,arch_db:om_hr_payroll.hr_payroll_period_form
+msgid "Payroll Period"
+msgstr "Período de nómina"
+
+#. module: om_hr_payroll
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.view_hr_payroll_structure_filter
 msgid "Payroll Structures"
 msgstr "Estructuras de sueldos"
+
+#. module: om_hr_payroll
+#: model:ir.model,name:om_hr_payroll.model_hr_payroll_period
+msgid "Payroll calculation periods"
+msgstr "Períodos de cálculo de nómina"
 
 #. module: om_hr_payroll
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.payroll_hr_employee_view_form
@@ -1389,7 +1599,7 @@ msgstr "Nómina"
 #: code:addons/om_hr_payroll/models/hr_payslip.py:0
 #, python-format
 msgid "Payslip 'Date From' must be earlier 'Date To'."
-msgstr ""
+msgstr "La 'Fecha desde' del recibo de nómina debe ser anterior a la 'Fecha hasta'."
 
 #. module: om_hr_payroll
 #: model:ir.model,name:om_hr_payroll.model_hr_payslip_run
@@ -1413,7 +1623,7 @@ msgstr "Cantidad de nóminas"
 #. module: om_hr_payroll
 #: model:ir.model,name:om_hr_payroll.model_report_om_hr_payroll_report_payslip_details
 msgid "Payslip Details Report"
-msgstr ""
+msgstr "Informe de detalles de recibo de nómina"
 
 #. module: om_hr_payroll
 #: model:ir.model,name:om_hr_payroll.model_hr_payslip_input
@@ -1448,7 +1658,7 @@ msgstr "Líneas de nómina por registro de contribución"
 #. module: om_hr_payroll
 #: model:ir.model,name:om_hr_payroll.model_payslip_lines_contribution_register
 msgid "Payslip Lines by Contribution Registers"
-msgstr ""
+msgstr "Líneas de recibo de nómina por registros de contribuciones"
 
 #. module: om_hr_payroll
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__name
@@ -1458,7 +1668,7 @@ msgstr "Nombre de nómina"
 #. module: om_hr_payroll
 #: model:mail.template,name:om_hr_payroll.mail_template_payslip
 msgid "Payslip Template"
-msgstr ""
+msgstr "Plantilla de recibo de nómina"
 
 #. module: om_hr_payroll
 #: model:ir.model,name:om_hr_payroll.model_hr_payslip_worked_days
@@ -1469,7 +1679,7 @@ msgstr "Días trabajados de la nómina"
 #. module: om_hr_payroll
 #: model:mail.template,subject:om_hr_payroll.mail_template_payslip
 msgid "Payslip: {{ object.number }}"
-msgstr ""
+msgstr "Recibo de nómina: {{ objeto.número }}"
 
 #. module: om_hr_payroll
 #: model:ir.actions.act_window,name:om_hr_payroll.act_hr_employee_payslip_list
@@ -1509,8 +1719,8 @@ msgid "Percentage based on"
 msgstr "Porcentaje basado en"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__payroll_period_id
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.hr_payslip_run_form
-#: model_terms:ir.ui.view,arch_db:om_hr_payroll.view_hr_payslip_form
 msgid "Period"
 msgstr "Período"
 
@@ -1598,13 +1808,13 @@ msgstr "Factura rectificativa"
 #: code:addons/om_hr_payroll/models/hr_payslip.py:0
 #, python-format
 msgid "Refund Payslip"
-msgstr ""
+msgstr "Reembolso de nómina"
 
 #. module: om_hr_payroll
 #: code:addons/om_hr_payroll/models/hr_payslip.py:0
 #, python-format
 msgid "Refund: "
-msgstr "Devolución: "
+msgstr "Reembolso:"
 
 #. module: om_hr_payroll
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contribution_register__register_line_ids
@@ -1622,19 +1832,16 @@ msgid "Resource Mixin"
 msgstr "Mixin de recursos"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__activity_user_id
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__activity_user_id
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "Usuario Responsable"
 
 #. module: om_hr_payroll
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip_line__salary_rule_id
 msgid "Rule"
 msgstr "Regla"
-
-#. module: om_hr_payroll
-#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr ""
 
 #. module: om_hr_payroll
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.hr_salary_rule_category_form
@@ -1649,7 +1856,7 @@ msgstr "Cálculo de la nómina"
 #. module: om_hr_payroll
 #: model:ir.model,name:om_hr_payroll.model_hr_salary_rule
 msgid "Salary Rule"
-msgstr "Regla salarial"
+msgstr "Regla de Salario"
 
 #. module: om_hr_payroll
 #: model:ir.actions.act_window,name:om_hr_payroll.action_hr_salary_rule_category
@@ -1686,9 +1893,10 @@ msgstr "Reglas salariales"
 
 #. module: om_hr_payroll
 #: code:addons/om_hr_payroll/models/hr_payslip.py:0
+#: code:addons/om_hr_payroll/models/hr_payslip.py:0
 #, python-format
 msgid "Salary Slip of %s for %s"
-msgstr "Nómina salarial de %s para %s"
+msgstr "Recibo de sueldo de %s para %s"
 
 #. module: om_hr_payroll
 #: model:ir.model,name:om_hr_payroll.model_hr_payroll_structure
@@ -1736,6 +1944,12 @@ msgid "Search Salary Rule"
 msgstr "Buscar regla salarial"
 
 #. module: om_hr_payroll
+#: code:addons/om_hr_payroll/wizard/generate_payroll_period.py:0
+#, python-format
+msgid "Second Bi Weekly"
+msgstr "Segundo quincenal"
+
+#. module: om_hr_payroll
 #: model:ir.model.fields.selection,name:om_hr_payroll.selection__hr_contract__schedule_pay__semi-annually
 msgid "Semi-annually"
 msgstr "Semestral"
@@ -1743,7 +1957,7 @@ msgstr "Semestral"
 #. module: om_hr_payroll
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.view_hr_payslip_form
 msgid "Send E-Mail"
-msgstr ""
+msgstr "enviar correo electrónico"
 
 #. module: om_hr_payroll
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contract_type__sequence
@@ -1768,6 +1982,11 @@ msgid "Settings"
 msgstr "Configuración"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_generate_payroll_period__start_period
+msgid "Start Period"
+msgstr "Período de inicio"
+
+#. module: om_hr_payroll
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.view_hr_payslip_filter
 msgid "States"
 msgstr "Estados"
@@ -1779,13 +1998,15 @@ msgid "Status"
 msgstr "Estado"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,help:om_hr_payroll.field_hr_payment_frequency__activity_state
+#: model:ir.model.fields,help:om_hr_payroll.field_hr_payroll_period__activity_state
 #: model:ir.model.fields,help:om_hr_payroll.field_hr_payslip__activity_state
 msgid ""
 "Status based on activities\n"
 "Overdue: Due date is already passed\n"
 "Today: Activity date is today\n"
 "Planned: Future activities."
-msgstr ""
+msgstr "Estado basado en actividades\nAtrasado: la fecha de vencimiento ya pasó\nHoy: la fecha de la actividad es hoy\nPlanificado: actividades futuras."
 
 #. module: om_hr_payroll
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__struct_id
@@ -1798,7 +2019,7 @@ msgstr "Estructura"
 msgid ""
 "The code of salary rules can be used as reference in computation of other "
 "rules. In that case, it is case sensitive."
-msgstr ""
+msgstr "El código de reglas salariales se puede utilizar como referencia en el cálculo de otras reglas. "
 "El código de las reglas salariales puede ser usado como referencia en el "
 "cálculo de otras reglas. En ese caso, se distingue entre mayúsculas y "
 "minúsculas."
@@ -1835,13 +2056,19 @@ msgid "The minimum amount, applied for this rule."
 msgstr "El importe mínimo aplicado a esta regla"
 
 #. module: om_hr_payroll
+#: code:addons/om_hr_payroll/wizard/generate_payroll_period.py:0
+#, python-format
+msgid "The year and the year of the beginning of the period must be the same."
+msgstr "El año y el año de inicio del período deben ser iguales."
+
+#. module: om_hr_payroll
 #: model:ir.model.fields,help:om_hr_payroll.field_hr_payslip_line__condition_range
 #: model:ir.model.fields,help:om_hr_payroll.field_hr_salary_rule__condition_range
 msgid ""
-"This will be used to compute the % fields values; in general it is on "
-"basic, but you can also use categories code fields in lowercase as a "
-"variable names (hra, ma, lta, etc.) and the variable basic."
-msgstr ""
+"This will be used to compute the % fields values; in general it is on basic,"
+" but you can also use categories code fields in lowercase as a variable "
+"names (hra, ma, lta, etc.) and the variable basic."
+msgstr "Esto se utilizará para calcular los valores de los campos %; "
 "Se usará para calcular el valor de los campos %; en general se utiliza lo "
 "básico, pero también puede usar campos de código de categorías en minúscula "
 "como nombres de variables (hra, ma, lta, etc.) y las variables básicas."
@@ -1857,7 +2084,7 @@ msgstr "Tipo de ausencia"
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.report_payslip
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.report_payslip_details
 msgid "Total"
-msgstr "Total"
+msgstr "total"
 
 #. module: om_hr_payroll
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.view_hr_payslip_form
@@ -1874,22 +2101,28 @@ msgstr "Bono de viaje"
 #. module: om_hr_payroll
 #: model:ir.model.fields,help:om_hr_payroll.field_hr_contract__travel_allowance
 msgid "Travel allowance"
-msgstr ""
+msgstr "Subsidio de viaje"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,help:om_hr_payroll.field_hr_payment_frequency__activity_exception_decoration
+#: model:ir.model.fields,help:om_hr_payroll.field_hr_payroll_period__activity_exception_decoration
 #: model:ir.model.fields,help:om_hr_payroll.field_hr_payslip__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Tipo de actividad excepcional registrada."
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__message_unread
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__message_unread
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__message_unread
 msgid "Unread Messages"
-msgstr ""
+msgstr "mensajes no leídos"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__message_unread_counter
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__message_unread_counter
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__message_unread_counter
 msgid "Unread Messages Counter"
-msgstr ""
+msgstr "Contador de mensajes no leídos"
 
 #. module: om_hr_payroll
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_contract_advantage_template__upper_bound
@@ -1919,27 +2152,35 @@ msgid "Waiting"
 msgstr "En espera"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payment_frequency__website_message_ids
+#: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payroll_period__website_message_ids
 #: model:ir.model.fields,field_description:om_hr_payroll.field_hr_payslip__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Mensajes del sitio web"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,help:om_hr_payroll.field_hr_payment_frequency__website_message_ids
+#: model:ir.model.fields,help:om_hr_payroll.field_hr_payroll_period__website_message_ids
 #: model:ir.model.fields,help:om_hr_payroll.field_hr_payslip__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Historial de comunicación del sitio web"
 
 #. module: om_hr_payroll
+#: model:ir.model.fields.selection,name:om_hr_payroll.selection__hr_payment_frequency__name__week
+msgid "Week"
+msgstr "Semana"
+
+#. module: om_hr_payroll
+#: code:addons/om_hr_payroll/wizard/generate_payroll_period.py:0
 #: model:ir.model.fields.selection,name:om_hr_payroll.selection__hr_contract__schedule_pay__weekly
+#, python-format
 msgid "Weekly"
 msgstr "Semanalmente"
 
 #. module: om_hr_payroll
+#: code:addons/om_hr_payroll/models/hr_payslip.py:0
 #: model_terms:ir.ui.view,arch_db:om_hr_payroll.view_hr_payslip_form
-msgid "Worked Day"
-msgstr "Días trabajados"
-
-#. module: om_hr_payroll
-#: model_terms:ir.ui.view,arch_db:om_hr_payroll.view_hr_payslip_form
+#, python-format
 msgid "Worked Days"
 msgstr "Días trabajados"
 
@@ -1972,6 +2213,11 @@ msgid "Wrong range condition defined for salary rule %s (%s)."
 msgstr "Rango de condición erróneo para la regla de salario %s (%s)."
 
 #. module: om_hr_payroll
+#: model:ir.model.fields,field_description:om_hr_payroll.field_generate_payroll_period__year
+msgid "Year"
+msgstr "Año"
+
+#. module: om_hr_payroll
 #: code:addons/om_hr_payroll/models/hr_payslip.py:0
 #, python-format
 msgid "You Cannot Delete Done Payslips Batches"
@@ -1987,7 +2233,7 @@ msgstr "No se pueden crear estructuras salariales recursivas"
 #: code:addons/om_hr_payroll/models/hr_payslip.py:0
 #, python-format
 msgid "You cannot delete a payslip which is not draft or cancelled!"
-msgstr ""
+msgstr "¡No se puede borrar una nómina que no esté girada o cancelada!"
 "¡No puede eliminar una nómina que no esté en estado borrador o cancenlado!"
 
 #. module: om_hr_payroll
@@ -2011,4 +2257,4 @@ msgstr "El resultado afectará a una variable"
 #. module: om_hr_payroll
 #: model:mail.template,report_name:om_hr_payroll.mail_template_payslip
 msgid "{{ (object.number or '').replace('/','_') }}"
-msgstr ""
+msgstr "{{ (número.objeto o '').replace('/','_') }}"

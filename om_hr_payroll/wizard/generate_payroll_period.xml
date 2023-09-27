@@ -13,7 +13,7 @@
                         </span>
                     </group>
                     <group colspan="4">
-                        <field name="payment_frequency_id" domain="[('company_id', 'in', company_id)]"/>
+                        <field name="payment_frequency_id"/>
                         <field name="year"/>
                         <field name="start_period"/>
                     </group>

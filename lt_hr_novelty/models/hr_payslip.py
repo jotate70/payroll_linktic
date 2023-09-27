@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields, _
 
 
 class HrPayslip(models.Model):
@@ -6,9 +6,31 @@ class HrPayslip(models.Model):
 
     novelty_ids = fields.One2many('hr.novelty', 'payslip_id', string="Novelty's")
 
+    # Method of adding novelty income and deductions
     def compute_sheet(self):
         res = super(HrPayslip, self).compute_sheet()
         for rec in self:
+
+            # Delete all objects
+            for line in rec.earn_ids:
+                rec.earn_ids = [(2, line.id)]
+            for line in rec.deduction_ids:
+                rec.deduction_ids = [(2, line.id)]
+
+            # Earn for worked days
+            worked_line = rec.worked_days_line_ids.filtered(lambda l: l.code == 'WORK100')
+            if worked_line:
+                amount = rec.contract_id.wage / 30
+                total = worked_line.number_of_days * (rec.contract_id.wage / 30)
+                rec.earn_ids = [(0, 0, {
+                    'name': _("Basic Wage"),
+                    'amount': amount,
+                    'quantity': worked_line.number_of_days,
+                    'total': total,
+                    'date_start': rec.date_from,
+                    'date_end': rec.date_to,
+                    'computed': False,
+                })]
 
             noveltys_not_date_end = rec.env['hr.novelty'].search([
                 ('contract_id', '=', rec.contract_id.id), ('employee_id', '=', rec.employee_id.id),
@@ -25,12 +47,6 @@ class HrPayslip(models.Model):
             novelties = noveltys_not_date_end + noveltys_date_end
             rec.novelty_ids = [(6, 0, novelties.ids)]
 
-            # Delete all objects
-            for line in rec.earn_ids:
-                rec.earn_ids = [(2, line.id)]
-            for line in rec.deduction_ids:
-                rec.deduction_ids = [(2, line.id)]
-
             for novelty in novelties:
                 if novelty.type == 'income':
                     rec.earn_ids = [(0, 0, {
@@ -40,6 +56,7 @@ class HrPayslip(models.Model):
                         'total': novelty.value,
                         'date_start': novelty.date_start,
                         'date_end': novelty.date_end,
+                        'computed': False,
                     })]
 
                 elif novelty.type == 'deduction':
@@ -50,5 +67,7 @@ class HrPayslip(models.Model):
                         'total': novelty.value,
                         'date_start': novelty.date_start,
                         'date_end': novelty.date_end,
+                        'computed': False,
                     })]
+
         return res

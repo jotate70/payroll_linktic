@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-29 19:41+0000\n"
-"PO-Revision-Date: 2023-08-29 19:41+0000\n"
+"POT-Creation-Date: 2023-09-27 04:17+0000\n"
+"PO-Revision-Date: 2023-09-27 04:17+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -80,16 +80,17 @@ msgid "Attachment Count"
 msgstr "Conteo de Adjuntos"
 
 #. module: lt_hr_novelty
+#: code:addons/lt_hr_novelty/models/hr_payslip.py:0
+#, python-format
+msgid "Basic Wage"
+msgstr "Salario Básico"
+
+#. module: lt_hr_novelty
 #: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__category_id
 #: model:ir.ui.menu,name:lt_hr_novelty.menu_hr_novelty_category
 #: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_type_search
 msgid "Category"
 msgstr "Categoría"
-
-#. module: lt_hr_novelty
-#: model:ir.model,name:lt_hr_novelty.model_hr_novelty_category
-msgid "Payroll News Category"
-msgstr "Categoría de Novedad de Nómina"
 
 #. module: lt_hr_novelty
 #: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__code
@@ -188,15 +189,10 @@ msgid "Employee"
 msgstr "Empleado"
 
 #. module: lt_hr_novelty
-#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__state
-msgid "State"
-msgstr "Estado"
-
-#. module: lt_hr_novelty
 #: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__factor
 #: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__factor
 msgid "Factor"
-msgstr "Factor"
+msgstr ""
 
 #. module: lt_hr_novelty
 #: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__message_follower_ids
@@ -237,7 +233,7 @@ msgstr "Tiene Mensaje"
 #: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__id
 #: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__id
 msgid "ID"
-msgstr ""
+msgstr "identificación"
 
 #. module: lt_hr_novelty
 #: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__activity_exception_icon
@@ -337,6 +333,7 @@ msgstr "Mi Fecha Límite de Actividad"
 
 #. module: lt_hr_novelty
 #: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__name
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__name
 #: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__name
 msgid "Name"
 msgstr "Nombre"
@@ -370,16 +367,6 @@ msgid "Next Activity Type"
 msgstr "Siguiente Tipo de Actividad"
 
 #. module: lt_hr_novelty
-#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__name
-msgid "Name"
-msgstr "Nombre"
-
-#. module: lt_hr_novelty
-#: model:ir.model,name:lt_hr_novelty.model_hr_novelty
-msgid "Novelty of Payroll"
-msgstr "Novedad de Nómina"
-
-#. module: lt_hr_novelty
 #: model:ir.actions.act_window,name:lt_hr_novelty.action_hr_novelty
 msgid "Novelty"
 msgstr "Novedad"
@@ -397,6 +384,12 @@ msgid "Novelty Type"
 msgstr "Tipo de Novedad"
 
 #. module: lt_hr_novelty
+#: model:ir.model,name:lt_hr_novelty.model_hr_novelty
+msgid "Novelty of Payroll"
+msgstr "Novedad de Nómina"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_payslip__novelty_ids
 #: model:ir.ui.menu,name:lt_hr_novelty.menu_hr_novelty
 #: model:ir.ui.menu,name:lt_hr_novelty.menu_hr_novelty_global
 #: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_search
@@ -444,9 +437,24 @@ msgid "Number of unread messages"
 msgstr "Número de mensajes no leídos"
 
 #. module: lt_hr_novelty
+#: model:ir.model,name:lt_hr_novelty.model_hr_payslip
+msgid "Pay Slip"
+msgstr "Nómina"
+
+#. module: lt_hr_novelty
+#: model:ir.model,name:lt_hr_novelty.model_hr_novelty_category
+msgid "Payroll News Category"
+msgstr "Categoría de noticias sobre nómina"
+
+#. module: lt_hr_novelty
 #: model:ir.model,name:lt_hr_novelty.model_hr_novelty_type
 msgid "Payroll Novelty Type"
 msgstr "Nómina Novedad Tipo"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__payslip_id
+msgid "Payslip"
+msgstr "Recibo de nómina"
 
 #. module: lt_hr_novelty
 #: model:ir.model.fields.selection,name:lt_hr_novelty.selection__hr_novelty__state__pending_approval
@@ -494,6 +502,11 @@ msgid "Set To Draft"
 msgstr "Enviar a Borrador"
 
 #. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__state
+msgid "State"
+msgstr "Estado"
+
+#. module: lt_hr_novelty
 #: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty__activity_state
 #: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_category__activity_state
 #: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty_type__activity_state
@@ -502,7 +515,7 @@ msgid ""
 "Overdue: Due date is already passed\n"
 "Today: Activity date is today\n"
 "Planned: Future activities."
-msgstr ""
+msgstr "Estado basado en actividades\nAtrasado: la fecha de vencimiento ya pasó\nHoy: la fecha de la actividad es hoy\nPlanificado: actividades futuras."
 "Estado basado en actividades\n"
 "Atrasado: la fecha de vencimiento ya pasó\n"
 "Hoy: la fecha de la actividad es hoy\n"

@@ -34,7 +34,7 @@ class EarnLine(models.Model):
     sequence = fields.Integer(required=True, index=True, default=10)
     code = fields.Char(help="The code that can be used in the salary rules", compute="_compute_rule", store=True)
     amount = fields.Float("Amount")
-
+    computed = fields.Boolean(default=True)
     date_start = fields.Date("Start date")
     date_end = fields.Date("End date")
     time_start = fields.Float("Start hour")
@@ -93,35 +93,37 @@ class EarnLine(models.Model):
     @api.depends("quantity", "amount")
     def _compute_total(self):
         for rec in self:
-            rec.total = rec.quantity * rec.amount
+            if rec.computed:
+                rec.total = rec.quantity * rec.amount
 
     @api.depends("date_start", "date_end", "time_start", "time_end")
     def _compute_quantity(self):
         for rec in self:
-            if rec.category in (
-                    'vacation_common',
-                    'licensings_maternity_or_paternity_leaves',
-                    'licensings_permit_or_paid_licenses',
-                    'licensings_suspension_or_unpaid_leaves',
-                    'incapacities_common',
-                    'incapacities_professional',
-                    'incapacities_working',
-                    'legal_strikes'
-            ) and rec.date_end and rec.date_start:
-                rec.quantity = (rec.date_end - rec.date_start).days + 1
-            elif rec.category in (
-                    'daily_overtime',
-                    'overtime_night_hours',
-                    'hours_night_surcharge',
-                    'sunday_holiday_daily_overtime',
-                    'daily_surcharge_hours_sundays_holidays',
-                    'sunday_night_overtime_holidays',
-                    'sunday_holidays_night_surcharge_hours'
-            ) and rec.date_end and rec.date_start:
-                days = (rec.date_end - rec.date_start).days
-                rec.quantity = 24 * days + rec.time_end - rec.time_start
-            else:
-                rec.quantity = 1
+            if rec.computed:
+                if rec.category in (
+                        'vacation_common',
+                        'licensings_maternity_or_paternity_leaves',
+                        'licensings_permit_or_paid_licenses',
+                        'licensings_suspension_or_unpaid_leaves',
+                        'incapacities_common',
+                        'incapacities_professional',
+                        'incapacities_working',
+                        'legal_strikes'
+                ) and rec.date_end and rec.date_start:
+                    rec.quantity = (rec.date_end - rec.date_start).days + 1
+                elif rec.category in (
+                        'daily_overtime',
+                        'overtime_night_hours',
+                        'hours_night_surcharge',
+                        'sunday_holiday_daily_overtime',
+                        'daily_surcharge_hours_sundays_holidays',
+                        'sunday_night_overtime_holidays',
+                        'sunday_holidays_night_surcharge_hours'
+                ) and rec.date_end and rec.date_start:
+                    days = (rec.date_end - rec.date_start).days
+                    rec.quantity = 24 * days + rec.time_end - rec.time_start
+                else:
+                    rec.quantity = 1
 
     @api.constrains("time_start")
     def _check_time_start(self):

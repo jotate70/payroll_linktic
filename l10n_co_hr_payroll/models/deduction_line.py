@@ -34,6 +34,7 @@ class DeductionLine(models.Model):
     sequence = fields.Integer(required=True, index=True, default=10)
     code = fields.Char(help="The code that can be used in the salary rules", compute="_compute_rule", store=True)
     amount = fields.Float("Amount")
+    computed = fields.Boolean(default=True)
     quantity = fields.Float("Quantity", default=1, compute='_compute_quantity', store=True)
     date_start = fields.Date("Start date")
     date_end = fields.Date("End date")
@@ -71,4 +72,5 @@ class DeductionLine(models.Model):
     @api.depends("quantity", "amount")
     def _compute_total(self):
         for rec in self:
-            rec.total = rec.quantity * rec.amount
+            if rec.computed:
+                rec.total = rec.quantity * rec.amount

@@ -68,6 +68,7 @@
                                 <field name="earn_ids" readonly="1">
                                     <tree string="Earn Details" class="o_table_rounded">
                                         <field name="name"/>
+                                        <field name="quantity"/>
                                         <field name="total"/>
                                     </tree>
                                 </field>
@@ -84,6 +85,7 @@
                                 <field name="deduction_ids" readonly="1">
                                     <tree string="Deduction Details" class="o_table_rounded">
                                         <field name="name"/>
+                                        <field name="quantity"/>
                                         <field name="total"/>
                                     </tree>
                                 </field>

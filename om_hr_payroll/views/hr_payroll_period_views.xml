@@ -15,7 +15,7 @@
                         </group>
                         <group>
                             <group>
-                                <field name="payment_frequency_id" domain="[('company_id', 'in', company_id)]"/>
+                                <field name="payment_frequency_id"/>
                                 <field name="company_id"/>
                             </group>
                             <group>

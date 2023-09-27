@@ -272,14 +272,14 @@ class HrPayslip(models.Model):
                     'number_of_hours': 0.0,
                     'contract_id': contract.id,
                 })
-                current_leave_struct['number_of_hours'] -= hours
+                current_leave_struct['number_of_hours'] += hours
                 work_hours = calendar.get_work_hours_count(
                     tz.localize(datetime.combine(day, time.min)),
                     tz.localize(datetime.combine(day, time.max)),
                     compute_leaves=False,
                 )
                 if work_hours:
-                    current_leave_struct['number_of_days'] -= hours / work_hours
+                    current_leave_struct['number_of_days'] += hours / work_hours
 
             # compute worked days ORIGINAL MODULE
             # work_data = contract.employee_id._get_work_days_data(
@@ -289,8 +289,11 @@ class HrPayslip(models.Model):
             #     compute_leaves=False,
             # )
 
-            days = days360(date_from, date_to + relativedelta(days=1))
-            hours = contract.resource_calendar_id.hours_per_day * days
+            # Rest days of all leaves
+            leave_days = sum(item['number_of_days'] for item in leaves.values() if 'number_of_days' in item)
+            leave_hours = sum(item['number_of_hours'] for item in leaves.values() if 'number_of_days' in item)
+            worked_days = days360(date_from, date_to + relativedelta(days=1))
+            worked_hours = contract.resource_calendar_id.hours_per_day * worked_days
 
             attendances = {
                 'name': _("Worked Days"),
@@ -298,8 +301,8 @@ class HrPayslip(models.Model):
                 'code': 'WORK100',
                 # 'number_of_days': work_data['days'],
                 # 'number_of_hours': work_data['hours'],
-                'number_of_days': days,
-                'number_of_hours': hours,
+                'number_of_days': worked_days - leave_days,
+                'number_of_hours': worked_hours - leave_hours,
                 'contract_id': contract.id,
             }
 
@@ -307,24 +310,24 @@ class HrPayslip(models.Model):
             res.extend(leaves.values())
         return res
 
-    @api.model
-    def get_inputs(self, contracts, date_from, date_to):
-        res = []
-
-        structure_ids = contracts.get_all_structures()
-        rule_ids = self.env['hr.payroll.structure'].browse(structure_ids).get_all_rules()
-        sorted_rule_ids = [id for id, sequence in sorted(rule_ids, key=lambda x:x[1])]
-        inputs = self.env['hr.salary.rule'].browse(sorted_rule_ids).mapped('input_ids')
-
-        for contract in contracts:
-            for input in inputs:
-                input_data = {
-                    'name': input.name,
-                    'code': input.code,
-                    'contract_id': contract.id,
-                }
-                res += [input_data]
-        return res
+    # @api.model
+    # def get_inputs(self, contracts, date_from, date_to):
+    #     res = []
+    #
+    #     structure_ids = contracts.get_all_structures()
+    #     rule_ids = self.env['hr.payroll.structure'].browse(structure_ids).get_all_rules()
+    #     sorted_rule_ids = [id for id, sequence in sorted(rule_ids, key=lambda x:x[1])]
+    #     inputs = self.env['hr.salary.rule'].browse(sorted_rule_ids).mapped('input_ids')
+    #
+    #     for contract in contracts:
+    #         for input in inputs:
+    #             input_data = {
+    #                 'name': input.name,
+    #                 'code': input.code,
+    #                 'contract_id': contract.id,
+    #             }
+    #             res += [input_data]
+    #     return res
 
     @api.model
     def _get_payslip_lines(self, contract_ids, payslip_id):
@@ -343,18 +346,18 @@ class HrPayslip(models.Model):
             def __getattr__(self, attr):
                 return attr in self.dict and self.dict.__getitem__(attr) or 0.0
 
-        class InputLine(BrowsableObject):
-            """a class that will be used into the python code, mainly for usability purposes"""
-            def sum(self, code, from_date, to_date=None):
-                if to_date is None:
-                    to_date = fields.Date.today()
-                self.env.cr.execute("""
-                    SELECT sum(amount) as sum
-                    FROM hr_payslip as hp, hr_payslip_input as pi
-                    WHERE hp.employee_id = %s AND hp.state = 'done'
-                    AND hp.date_from >= %s AND hp.date_to <= %s AND hp.id = pi.payslip_id AND pi.code = %s""",
-                    (self.employee_id, from_date, to_date, code))
-                return self.env.cr.fetchone()[0] or 0.0
+        # class InputLine(BrowsableObject):
+        #     """a class that will be used into the python code, mainly for usability purposes"""
+        #     def sum(self, code, from_date, to_date=None):
+        #         if to_date is None:
+        #             to_date = fields.Date.today()
+        #         self.env.cr.execute("""
+        #             SELECT sum(amount) as sum
+        #             FROM hr_payslip as hp, hr_payslip_input as pi
+        #             WHERE hp.employee_id = %s AND hp.state = 'done'
+        #             AND hp.date_from >= %s AND hp.date_to <= %s AND hp.id = pi.payslip_id AND pi.code = %s""",
+        #             (self.employee_id, from_date, to_date, code))
+        #         return self.env.cr.fetchone()[0] or 0.0
 
         class WorkedDays(BrowsableObject):
             """a class that will be used into the python code, mainly for usability purposes"""
@@ -404,12 +407,13 @@ class HrPayslip(models.Model):
             inputs_dict[input_line.code] = input_line
 
         categories = BrowsableObject(payslip.employee_id.id, {}, self.env)
-        inputs = InputLine(payslip.employee_id.id, inputs_dict, self.env)
+        # inputs = InputLine(payslip.employee_id.id, inputs_dict, self.env)
         worked_days = WorkedDays(payslip.employee_id.id, worked_days_dict, self.env)
         payslips = Payslips(payslip.employee_id.id, payslip, self.env)
         rules = BrowsableObject(payslip.employee_id.id, rules_dict, self.env)
 
-        baselocaldict = {'categories': categories, 'rules': rules, 'payslip': payslips, 'worked_days': worked_days, 'inputs': inputs}
+        # baselocaldict = {'categories': categories, 'rules': rules, 'payslip': payslips, 'worked_days': worked_days, 'inputs': inputs}
+        baselocaldict = {'categories': categories, 'rules': rules, 'payslip': payslips, 'worked_days': worked_days}
         #get the ids of the structures on the contracts and their parent id as well
         contracts = self.env['hr.contract'].browse(contract_ids)
         if len(contracts) == 1 and payslip.struct_id:
@@ -561,11 +565,11 @@ class HrPayslip(models.Model):
                 worked_days_lines += worked_days_lines.new(r)
             self.worked_days_line_ids = worked_days_lines
 
-            input_line_ids = self.get_inputs(contracts, date_from, date_to)
-            input_lines = self.input_line_ids.browse([])
-            for r in input_line_ids:
-                input_lines += input_lines.new(r)
-            self.input_line_ids = input_lines
+            # input_line_ids = self.get_inputs(contracts, date_from, date_to)
+            # input_lines = self.input_line_ids.browse([])
+            # for r in input_line_ids:
+            #     input_lines += input_lines.new(r)
+            # self.input_line_ids = input_lines
             return
 
     @api.onchange('contract_id')
