@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 
 
 class HrNovelty(models.Model):
@@ -6,7 +6,7 @@ class HrNovelty(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = 'Novelty of Payroll'
 
-    name = fields.Char(string='Name', required=True, tracking=True)
+    name = fields.Char(string='Number', copy=False, readonly=True, required=True, default=lambda x: _('New'))
     employee_id = fields.Many2one('hr.employee', string='Employee', required=True, tracking=True)
     contract_id = fields.Many2one('hr.contract', string='Contract', required=True, tracking=True)
     company_id = fields.Many2one('res.company', default=lambda self: self.env.user.company_id)
@@ -16,8 +16,7 @@ class HrNovelty(models.Model):
     date_end = fields.Date(string='Date End', tracking=True)
     novelty_type_id = fields.Many2one('hr.novelty.type', string='Novelty Type', required=True, tracking=True)
     code = fields.Char(string='Code', related='novelty_type_id.code', tracking=True)
-    type = fields.Selection([('income', 'Income'), ('deduction', 'Deduction')], string='Type',
-                            related='novelty_type_id.type', store=True)
+    type = fields.Selection(related='novelty_type_id.type', store=True)
     quantity = fields.Integer(string='Quantity', required=True, tracking=True)
     value = fields.Float(string='Value', required=True, tracking=True)
     state = fields.Selection([
@@ -43,3 +42,15 @@ class HrNovelty(models.Model):
 
     def action_rejected(self):
         self.write({'state': 'rejected'})
+
+    @api.onchange('novelty_type_id')
+    def _calculated_value(self):
+        for record in self:
+            if record.novelty_type_id.apply_factor:
+                record.value = (record.wage / record.contract_id.resource_calendar_id.hours_per_day) * record.factor
+
+    @api.model
+    def create(self, vals):
+        if not vals.get('name') or vals['name'] == _('New'):
+            vals['name'] = self.env['ir.sequence'].next_by_code('hr.novelty') or _('New')
+        return super(HrNovelty, self).create(vals)

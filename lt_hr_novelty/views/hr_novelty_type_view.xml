@@ -9,7 +9,8 @@
                     <field name="name"/>
                     <field name="category_id"/>
                     <field name="factor"/>
-                    <field name="type"/>
+                    <field name="type" decoration-danger="type == 'deduction'" decoration-success="type == 'income'"
+                           widget="badge"/>
                 </tree>
             </field>
         </record>

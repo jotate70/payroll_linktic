@@ -1,15 +1,11 @@
 from dateutil.relativedelta import relativedelta
-
 from odoo.exceptions import ValidationError, UserError
 from odoo.addons.base.models.ir_model import IrModelFields
 from odoo import fields, models, api, _, SUPERUSER_ID
-
 from typing import Tuple, Dict, List, AnyStr
 from pytz import timezone
 import logging
-
 from .contract_management_log import ContractManagementLog
-
 _logger = logging.getLogger(__name__)
 
 
@@ -54,8 +50,7 @@ class ContractManagement(models.Model):
     employee_id = fields.Many2one("hr.employee", string="Employee", states=READONLY_STATES,
                                   domain="[('company_id', '=', actual_company_id)]")
     identification = fields.Char("Identification Number", related="employee_id.identification_id")
-    contract_id = fields.Many2one("hr.contract", string='Contract', required=True, traking=True,
-                                  track_visibility='onchange')
+    contract_id = fields.Many2one("hr.contract", string='Contract', required=True, tracking=True)
     company_id = fields.Many2one("res.company", string='Company', required=True, readonly=True, traking=True)
 
     actual_company_id = fields.Many2one("res.company", default=lambda self: self.env.company)
@@ -79,7 +74,7 @@ class ContractManagement(models.Model):
 
     is_scheduled = fields.Boolean(compute="compute_scheduled_status")
 
-    contract_state = fields.Selection('Contract State', related="contract_id.state")
+    contract_state = fields.Selection(related="contract_id.state")
     contract_date_end = fields.Date('Contract Date End', related="contract_id.date_end")
 
     @api.onchange('employee_id')

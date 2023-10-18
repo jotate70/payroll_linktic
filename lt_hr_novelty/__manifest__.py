@@ -12,9 +12,15 @@
     'category': 'Human Resources',
     'depends': ['base', 'om_hr_payroll'],  # Dependencias de otros módulos
     'data': [
+        # Data
+        'data/hr_novelty_category_data.xml',
+        'data/hr_novelty_type_data.xml',
+        'data/ir_sequence.xml',
+        # Security
         'security/ir.model.access.csv',  # Archivo de seguridad
+        # Views
         'views/menu.xml',  # Vistas XML
-        'views/hr_novelty_category_view.xml',  # Vistas XML
+        'views/hr_novelty_category_view.xml',
         'views/hr_novelty_type_view.xml',
         'views/hr_novelty_view.xml',
         # 'views/hr_payslip_view.xml',

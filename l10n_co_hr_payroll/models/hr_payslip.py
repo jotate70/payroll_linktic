@@ -156,162 +156,21 @@ class HrPayslip(models.Model):
         for rec in self:
             rec.currency_id = rec.company_id.currency_id
 
-    # def compute_sheet(self):
-    #     for rec in self:
-    #         # Read all codes
-    #         all_earn_code_list = []
-    #         for earn_id in rec.earn_ids:
-    #             all_earn_code_list.append(earn_id.code)
-    #
-    #         # Read all codes
-    #         all_deduction_code_list = []
-    #         for deduction_id in rec.deduction_ids:
-    #             all_deduction_code_list.append(deduction_id.code)
-    #
-    #         # Remove records with codes duplicated
-    #         earn_code_list = []
-    #         [earn_code_list.append(x) for x in all_earn_code_list if x not in earn_code_list]
-    #
-    #         # Remove records with codes duplicated
-    #         deduction_code_list = []
-    #         [deduction_code_list.append(x) for x in all_deduction_code_list if x not in deduction_code_list]
-    #
-    #         # List of all earn details
-    #         earn_list = []
-    #         for earn_id in rec.earn_ids:
-    #             earn_list.append({
-    #                 'name': earn_id.name,
-    #                 'sequence': earn_id.sequence,
-    #                 'code': earn_id.code,
-    #                 'amount': abs(earn_id.amount),
-    #                 'quantity': abs(earn_id.quantity),
-    #                 'total': abs(earn_id.total),
-    #                 'category': earn_id.category
-    #             })
-    #
-    #         # List of all deduction details
-    #         deduction_list = []
-    #         for deduction_id in rec.deduction_ids:
-    #             deduction_list.append({
-    #                 'name': deduction_id.name,
-    #                 'sequence': deduction_id.sequence,
-    #                 'code': deduction_id.code,
-    #                 'amount': abs(deduction_id.amount)
-    #             })
-    #
-    #         # Remove input line records with codes in earn and deduction code list
-    #         input_line_list = []
-    #         for input_line in rec.input_line_ids:
-    #             if input_line.code in earn_code_list or input_line.code in deduction_code_list:
-    #                 input_line_list.append((2, input_line.id))
-    #
-    #         # Remove worked days line records with codes in earn code list
-    #         worked_days_line_list = []
-    #         for worked_days_line in rec.worked_days_line_ids:
-    #             if worked_days_line.code in earn_code_list:
-    #                 worked_days_line_list.append((2, worked_days_line.id))
-    #
-    #         # Prepare earn input lines
-    #         for code in earn_code_list:
-    #             filter_list = list(filter(lambda x: x["code"] == code, earn_list))
-    #             amount = 0
-    #             quantity = 0
-    #             total = 0
-    #             for filter_item in filter_list:
-    #                 amount += filter_item['amount']
-    #                 quantity += filter_item['quantity']
-    #                 total += filter_item['total']
-    #
-    #             res_item = filter_list[0]
-    #
-    #             # Prepare input lines
-    #             input_line_list.append((0, 0, {
-    #                 'name': res_item['name'],
-    #                 'payslip_id': rec.id,
-    #                 'sequence': res_item['sequence'],
-    #                 'code': res_item['code'],
-    #                 'amount': abs(total),
-    #                 'contract_id': rec.contract_id.id
-    #             }))
-    #
-    #             # Prepare worked days lines
-    #             if res_item['category'] in (
-    #                     'vacation_common',
-    #                     'vacation_compensated',
-    #                     'licensings_maternity_or_paternity_leaves',
-    #                     'licensings_permit_or_paid_licenses',
-    #                     'licensings_suspension_or_unpaid_leaves',
-    #                     'incapacities_common',
-    #                     'incapacities_professional',
-    #                     'incapacities_working',
-    #                     'legal_strikes'
-    #             ):
-    #                 worked_days_line_list.append((0, 0, {
-    #                     'name': res_item['name'],
-    #                     'payslip_id': rec.id,
-    #                     'sequence': res_item['sequence'],
-    #                     'code': res_item['code'],
-    #                     'number_of_days': abs(quantity),
-    #                     'contract_id': rec.contract_id.id
-    #                 }))
-    #             elif res_item['category'] in (
-    #                     'daily_overtime',
-    #                     'overtime_night_hours',
-    #                     'hours_night_surcharge',
-    #                     'sunday_holiday_daily_overtime',
-    #                     'daily_surcharge_hours_sundays_holidays',
-    #                     'sunday_night_overtime_holidays',
-    #                     'sunday_holidays_night_surcharge_hours'
-    #             ):
-    #                 worked_days_line_list.append((0, 0, {
-    #                     'name': res_item['name'],
-    #                     'payslip_id': rec.id,
-    #                     'sequence': res_item['sequence'],
-    #                     'code': res_item['code'],
-    #                     'number_of_hours': abs(quantity),
-    #                     'contract_id': rec.contract_id.id
-    #                 }))
-    #
-    #         # Prepare deduction input lines
-    #         for code in deduction_code_list:
-    #             filter_list = list(filter(lambda x: x["code"] == code, deduction_list))
-    #             amount = 0
-    #             for filter_item in filter_list:
-    #                 amount += filter_item['amount']
-    #
-    #             res_item = filter_list[0]
-    #
-    #             input_line_list.append((0, 0, {
-    #                 'name': res_item['name'],
-    #                 'payslip_id': rec.id,
-    #                 'sequence': res_item['sequence'],
-    #                 'code': res_item['code'],
-    #                 'amount': -abs(amount),
-    #                 'contract_id': rec.contract_id.id
-    #             }))
-    #
-    #         # Add lines
-    #         rec.update({'input_line_ids': input_line_list})
-    #         rec.update({'worked_days_line_ids': worked_days_line_list})
-    #
-    #         # Sequences
-    #         if not rec.number:
-    #             rec.number = _('New')
-    #
-    #     res = super(HrPayslip, self).compute_sheet()
-    #     self.compute_totals()
-    #
-    #     # The sheet and the totals are calculated again,
-    #     # just in case the totals obtained initially are used to calculate some salary rule.
-    #     # Especially the field worked_days_total
-    #     try:
-    #         if int(self.env['ir.config_parameter'].sudo().get_param('jorels.payroll.recompute_sheet', 1)):
-    #             res = super(HrPayslip, self).compute_sheet()
-    #             self.compute_totals()
-    #     except ValueError as e:
-    #         raise UserError("The system parameter 'jorels.payroll.recompute_sheet' is misconfigured. Use only 0 or 1")
-    #
-    #     return res
+    def compute_sheet(self):
+        res = super(HrPayslip, self).compute_sheet()
+        self.compute_totals()
+
+        # The sheet and the totals are calculated again,
+        # just in case the totals obtained initially are used to calculate some salary rule.
+        # # Especially the field worked_days_total
+        # try:
+        #     if int(self.env['ir.config_parameter'].sudo().get_param('jorels.payroll.recompute_sheet', 1)):
+        #         res = super(HrPayslip, self).compute_sheet()
+        #         self.compute_totals()
+        # except ValueError as e:
+        #     raise UserError("The system parameter 'jorels.payroll.recompute_sheet' is misconfigured. Use only 0 or 1")
+
+        return res
 
     def compute_totals(self):
         for rec in self:
@@ -340,7 +199,7 @@ class HrPayslip(models.Model):
             rec.others_total_amount = others_total_amount
             rec.total_amount = accrued_total_amount - deductions_total_amount
 
-            rec.edi_payload = json.dumps(rec.get_json_request(), indent=4, sort_keys=False)
+            # rec.edi_payload = json.dumps(rec.get_json_request(), indent=4, sort_keys=False)
 
     @api.model
     def calculate_time_worked(self, start, end):

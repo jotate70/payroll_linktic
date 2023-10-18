@@ -67,7 +67,7 @@
                                             <field name="date_end"
                                                    attrs="{'required': [('apply_date_end', '=', True)]}"/>
                                         </div>
-                                        <field name="date_start"
+                                        <field name="date_start" string="Date"
                                                attrs="{'invisible': [('apply_date_end', '=', True)]}"/>
                                     </group>
                                     <group>

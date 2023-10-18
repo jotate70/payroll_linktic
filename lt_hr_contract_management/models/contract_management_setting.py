@@ -24,7 +24,7 @@ class ContractManagementReasonSetting(models.Model):
     name = fields.Char(string="Name", required=True, copy=False)
     class_ids = fields.Many2many("contract.management.class.setting", "reason_id_class_id_rel", "reason_id", "class_id",
                                  string="Class", copy=True)
-    is_employer_replacement = fields.Boolean("Employer Replacement", defauLT=False)
+    is_employer_replacement = fields.Boolean("Employer Replacement", default=False)
     type_id = fields.Many2one("contract.management.type.setting", string="Type", copy=False, required=False)
     distribute_entry = fields.Boolean("Distribute Entry", default=False)
     allow_future_measurement = fields.Boolean("Allow future measurement", default=False)
