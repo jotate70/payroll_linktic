@@ -8,3 +8,6 @@ class HrNoveltyCategory(models.Model):
 
     name = fields.Char(string='Name', required=True, tracking=True)
     apply_factor = fields.Boolean(string='Apply Factor', default=False, required=True, tracking=True)
+    self_calculating = fields.Boolean(string='Self Calculating', default=False, tracking=True)
+    type_calculation = fields.Selection([('days', 'Days'), ('hours', 'Hours')], string='Type Calculation',
+                                        tracking=True)

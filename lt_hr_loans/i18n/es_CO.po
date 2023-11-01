@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-13 15:28+0000\n"
-"PO-Revision-Date: 2023-10-13 15:28+0000\n"
+"POT-Creation-Date: 2023-11-01 15:54+0000\n"
+"PO-Revision-Date: 2023-11-01 15:54+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,10 @@ msgid ""
 "<span class=\"o_stat_text\">\n"
 "                                        Novelty\n"
 "                                    </span>"
-msgstr "<span class=\"o_stat_text\">\n Novedad\n </span>"
+msgstr ""
+"<span class=\"o_stat_text\">\n"
+" Novedad\n"
+" </span>"
 
 #. module: lt_hr_loans
 #: model:ir.model.fields,field_description:lt_hr_loans.field_hr_loan__access_warning
@@ -281,9 +284,10 @@ msgstr "Es seguidor"
 #: model:ir.model.fields,field_description:lt_hr_loans.field_hr_loan_type__is_saving
 #: model_terms:ir.ui.view,arch_db:lt_hr_loans.view_hr_loan_type_search
 msgid "Is Saving"
-msgstr "Es ahorro"
+msgstr "Está ahorrando"
 
 #. module: lt_hr_loans
+#: code:addons/lt_hr_loans/models/hr_loan.py:0
 #: code:addons/lt_hr_loans/models/hr_loan.py:0
 #, python-format
 msgid "It is not possible to make an amortization with 0 installments."
@@ -348,7 +352,7 @@ msgstr "Préstamo para empleado"
 #: model:ir.ui.menu,name:lt_hr_loans.menu_hr_loan
 #: model:ir.ui.menu,name:lt_hr_loans.menu_hr_loan_global
 msgid "Loan's"
-msgstr "Préstamos"
+msgstr "Préstamo"
 
 #. module: lt_hr_loans
 #: model:ir.model.fields,field_description:lt_hr_loans.field_hr_loan__message_main_attachment_id
@@ -384,6 +388,9 @@ msgid "Name"
 msgstr "Nombre"
 
 #. module: lt_hr_loans
+#: code:addons/lt_hr_loans/models/hr_loan.py:0
+#: code:addons/lt_hr_loans/models/hr_loan.py:0
+#: code:addons/lt_hr_loans/models/hr_loan.py:0
 #: code:addons/lt_hr_loans/models/hr_loan.py:0
 #: code:addons/lt_hr_loans/models/hr_loan.py:0
 #: code:addons/lt_hr_loans/models/hr_loan.py:0
@@ -426,6 +433,8 @@ msgstr "Cuenta de novedades"
 
 #. module: lt_hr_loans
 #: code:addons/lt_hr_loans/models/hr_loan.py:0
+#: code:addons/lt_hr_loans/models/hr_loan.py:0
+#: code:addons/lt_hr_loans/models/hr_loan_payment.py:0
 #: code:addons/lt_hr_loans/models/hr_loan_payment.py:0
 #, python-format
 msgid "Novelty From Loan"
@@ -555,7 +564,17 @@ msgid ""
 "Overdue: Due date is already passed\n"
 "Today: Activity date is today\n"
 "Planned: Future activities."
-msgstr "Estado basado en actividades\nAtrasado: la fecha de vencimiento ya pasó\nHoy: la fecha de la actividad es hoy\nPlanificado: actividades futuras."
+msgstr ""
+"Estado basado en actividades\n"
+"Atrasado: la fecha de vencimiento ya pasó\n"
+"Hoy: la fecha de la actividad es hoy\n"
+"Planificado: actividades futuras."
+
+#. module: lt_hr_loans
+#: code:addons/lt_hr_loans/models/hr_loan_payment.py:0
+#, python-format
+msgid "The date cannot be less than the initial amortization date."
+msgstr "La fecha no puede ser inferior a la fecha de amortización inicial."
 
 #. module: lt_hr_loans
 #: model:ir.ui.menu,name:lt_hr_loans.menu_hr_loan_type
@@ -621,5 +640,4 @@ msgstr "Historial de comunicaciones del sitio web"
 #. module: lt_hr_loans
 #: model_terms:ir.ui.view,arch_db:lt_hr_loans.view_hr_loan_search
 msgid "loan's"
-msgstr "préstamos"
-
+msgstr "préstamo"

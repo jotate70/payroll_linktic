@@ -42,6 +42,7 @@
                             <group>
                                 <field name="type"/>
                                 <field name="apply_date_end"/>
+                                <field name="apply_quantity"/>
                             </group>
                         </group>
                         <group>

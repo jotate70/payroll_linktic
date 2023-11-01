@@ -81,7 +81,7 @@
                             <page name="loan_payment" string="Loan Payment"
                                   attrs="{'invisible': [('amortization', '=', False)]}">
                                 <group>
-                                    <field name="loan_payment_ids" nolabel="1">
+                                    <field name="loan_payment_ids" nolabel="1" attrs="{'readonly': [('state', '=', 'draft')]}">
                                         <tree editable="bottom">
                                             <field name="date" attrs="{'readonly': [('state','!=','pending')]}"/>
                                             <field name="value" attrs="{'readonly': [('state','!=','pending')]}"/>

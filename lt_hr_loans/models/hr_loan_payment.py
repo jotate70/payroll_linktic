@@ -1,4 +1,5 @@
 from odoo import fields, models, api, _
+from odoo.exceptions import UserError
 
 
 class HrLoanPayment(models.Model):
@@ -16,6 +17,14 @@ class HrLoanPayment(models.Model):
         ('paid', 'Paid'),
     ], string="State", readonly=True,
         default="pending")
+
+    @api.model
+    def create(self, vals):
+        res = super(HrLoanPayment, self).create(vals)
+        if res.loan_id.date_init:
+            if res.loan_id.date_init > res.date:
+                raise UserError(_("The date cannot be less than the initial amortization date."))
+        return res
 
     def generate_novelty(self):
         for record in self:

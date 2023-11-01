@@ -26,6 +26,11 @@
                             <group>
                                 <field name="apply_factor"/>
                             </group>
+                            <group>
+                                <field name="self_calculating"/>
+                                <field name="type_calculation"
+                                       attrs="{'invisible': [('self_calculating', '=', False)], 'required': [('self_calculating', '=', True)]}" widget="radio"/>
+                            </group>
                         </group>
                     </sheet>
                     <div class="o_attachment_preview"/>

@@ -48,6 +48,7 @@ class HrPayslip(models.Model):
             rec.novelty_ids = [(6, 0, novelties.ids)]
 
             for novelty in novelties:
+                date_end = novelty.date_end if novelty.date_end else novelty.date_start
                 if novelty.type == 'income':
                     rec.earn_ids = [(0, 0, {
                         'name': novelty.novelty_type_id.name,
@@ -55,7 +56,7 @@ class HrPayslip(models.Model):
                         'quantity': novelty.quantity,
                         'total': novelty.value,
                         'date_start': novelty.date_start,
-                        'date_end': novelty.date_end,
+                        'date_end': date_end,
                         'computed': False,
                     })]
 
@@ -66,7 +67,7 @@ class HrPayslip(models.Model):
                         'quantity': novelty.quantity,
                         'total': novelty.value,
                         'date_start': novelty.date_start,
-                        'date_end': novelty.date_end,
+                        'date_end': date_end,
                         'computed': False,
                     })]
 

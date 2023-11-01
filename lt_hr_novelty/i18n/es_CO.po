@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-27 04:17+0000\n"
-"PO-Revision-Date: 2023-09-27 04:17+0000\n"
+"POT-Creation-Date: 2023-11-01 15:53+0000\n"
+"PO-Revision-Date: 2023-11-01 15:53+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -63,6 +63,12 @@ msgid "Apply Factor"
 msgstr "Factor de Aplicación"
 
 #. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__apply_quantity
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__apply_quantity
+msgid "Apply Quantity"
+msgstr "Aplica Cantidad"
+
+#. module: lt_hr_novelty
 #: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_form
 msgid "Approval"
 msgstr "Aprobar"
@@ -80,6 +86,7 @@ msgid "Attachment Count"
 msgstr "Conteo de Adjuntos"
 
 #. module: lt_hr_novelty
+#: code:addons/lt_hr_novelty/models/hr_payslip.py:0
 #: code:addons/lt_hr_novelty/models/hr_payslip.py:0
 #, python-format
 msgid "Basic Wage"
@@ -149,6 +156,11 @@ msgid "Currency"
 msgstr "Moneda"
 
 #. module: lt_hr_novelty
+#: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_form
+msgid "Date"
+msgstr "Fecha"
+
+#. module: lt_hr_novelty
 #: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__date_end
 #: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_search
 msgid "Date End"
@@ -159,6 +171,11 @@ msgstr "Fecha de Fin"
 #: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_search
 msgid "Date Start"
 msgstr "Fecha de Inicio"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields.selection,name:lt_hr_novelty.selection__hr_novelty_category__type_calculation__days
+msgid "Days"
+msgstr "Días"
 
 #. module: lt_hr_novelty
 #: model:ir.model.fields.selection,name:lt_hr_novelty.selection__hr_novelty_type__type__deduction
@@ -192,7 +209,7 @@ msgstr "Empleado"
 #: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__factor
 #: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__factor
 msgid "Factor"
-msgstr ""
+msgstr "Factor"
 
 #. module: lt_hr_novelty
 #: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__message_follower_ids
@@ -227,6 +244,11 @@ msgstr "Fórmula"
 #: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__has_message
 msgid "Has Message"
 msgstr "Tiene Mensaje"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields.selection,name:lt_hr_novelty.selection__hr_novelty_category__type_calculation__hours
+msgid "Hours"
+msgstr "Horas"
 
 #. module: lt_hr_novelty
 #: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__id
@@ -332,11 +354,21 @@ msgid "My Activity Deadline"
 msgstr "Mi Fecha Límite de Actividad"
 
 #. module: lt_hr_novelty
-#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__name
 #: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__name
 #: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__name
 msgid "Name"
 msgstr "Nombre"
+
+#. module: lt_hr_novelty
+#: code:addons/lt_hr_novelty/models/hr_novelty.py:0
+#: code:addons/lt_hr_novelty/models/hr_novelty.py:0
+#: code:addons/lt_hr_novelty/models/hr_novelty.py:0
+#: code:addons/lt_hr_novelty/models/hr_novelty.py:0
+#: code:addons/lt_hr_novelty/models/hr_novelty.py:0
+#: code:addons/lt_hr_novelty/models/hr_novelty.py:0
+#, python-format
+msgid "New"
+msgstr "Nuevo"
 
 #. module: lt_hr_novelty
 #: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__activity_calendar_event_id
@@ -400,6 +432,11 @@ msgstr "Novedades"
 #: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_type_search
 msgid "Novelty's Type"
 msgstr "Tipo de novedad"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__name
+msgid "Number"
+msgstr "Número"
 
 #. module: lt_hr_novelty
 #: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__message_needaction_counter
@@ -497,6 +534,12 @@ msgid "Responsible User"
 msgstr "Usuario responsable"
 
 #. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__self_calculating
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__self_calculating
+msgid "Self Calculating"
+msgstr "Auto Calculo"
+
+#. module: lt_hr_novelty
 #: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_form
 msgid "Set To Draft"
 msgstr "Enviar a Borrador"
@@ -515,8 +558,11 @@ msgid ""
 "Overdue: Due date is already passed\n"
 "Today: Activity date is today\n"
 "Planned: Future activities."
-msgstr "Estado basado en actividades\nAtrasado: la fecha de vencimiento ya pasó\nHoy: la fecha de la actividad es hoy\nPlanificado: actividades futuras."
+msgstr ""
 "Estado basado en actividades\n"
+"Atrasado: la fecha de vencimiento ya pasó\n"
+"Hoy: la fecha de la actividad es hoy\n"
+"Planificado: actividades futuras.Estado basado en actividades\n"
 "Atrasado: la fecha de vencimiento ya pasó\n"
 "Hoy: la fecha de la actividad es hoy\n"
 "Planificado: Actividades futuras"
@@ -529,6 +575,13 @@ msgstr "Estado basado en actividades\nAtrasado: la fecha de vencimiento ya pasó
 #: model_terms:ir.ui.view,arch_db:lt_hr_novelty.view_hr_novelty_type_search
 msgid "Type"
 msgstr "Tipo"
+
+#. module: lt_hr_novelty
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty__type_calculation
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_category__type_calculation
+#: model:ir.model.fields,field_description:lt_hr_novelty.field_hr_novelty_type__type_calculation
+msgid "Type Calculation"
+msgstr "Tipo de Calculo"
 
 #. module: lt_hr_novelty
 #: model:ir.model.fields,help:lt_hr_novelty.field_hr_novelty__activity_exception_decoration

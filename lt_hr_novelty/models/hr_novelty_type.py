@@ -12,6 +12,9 @@ class HrNoveltyType(models.Model):
     type = fields.Selection([('income', 'Income'), ('deduction', 'Deduction')], string='Type', required=True,
                             tracking=True)
     apply_factor = fields.Boolean(related='category_id.apply_factor', string='Apply Factor', store=True, tracking=True)
+    self_calculating = fields.Boolean(related='category_id.self_calculating')
+    type_calculation = fields.Selection(related='category_id.type_calculation')
     factor = fields.Float(string='Factor', tracking=True)
-    apply_date_end = fields.Boolean(string='Apply Date End', default=False, required=True, tracking=True)
+    apply_date_end = fields.Boolean(string='Apply Date End', default=False, tracking=True)
+    apply_quantity = fields.Boolean(string='Apply Quantity', default=False, tracking=True)
     formula = fields.Html(string='Formula')

@@ -23,7 +23,7 @@ class HrLoan(models.Model):
                                   states={'in_process': [('readonly', True)], 'close': [('readonly', True)]})
     value = fields.Float(string="Value", required=True, tracking=True,
                          states={'in_process': [('readonly', True)], 'close': [('readonly', True)]})
-    amount_paid = fields.Float(string="Amount Paid", required=True, tracking=True, readonly=True,
+    amount_paid = fields.Float(string="Amount Paid", tracking=True, readonly=True,
                                states={'in_process': [('readonly', True)], 'close': [('readonly', True)]})
     date = fields.Date(string="Date", required=True, tracking=True,
                        states={'in_process': [('readonly', True)], 'close': [('readonly', True)]})
